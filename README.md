@@ -21,14 +21,14 @@ AI (Claude Code / Gemini Code Assist) を組み込んで **コーディングで
 
 ## 取り扱う自動化
 
-| # | カテゴリ | 自動化対象 | 使うツール |
-|---|---------|-----------|-----------|
-| 1 | GitHub Actions | リリース PR 作成 | release-please |
-| 2 | GitHub Actions | リリースノート生成 | Release Drafter + Claude |
-| 3 | Claude Skills  | コミット生成 | `/git:commit` |
-| 4 | Claude Skills  | コミット整理 (rebase/squash) | `/git:commit-organizer` |
-| 5 | Claude Skills  | PR 作成 | `/pr-create` |
-| 6 | Gemini Code Assist | PR レビュー | Gemini Code Assist for GitHub |
+| #   | カテゴリ           | 自動化対象                   | 使うツール                    |
+| --- | ------------------ | ---------------------------- | ----------------------------- |
+| 1   | GitHub Actions     | リリース PR 作成             | release-please                |
+| 2   | GitHub Actions     | リリースノート生成           | Release Drafter + Claude      |
+| 3   | Claude Skills      | コミット生成                 | `/git:commit`                 |
+| 4   | Claude Skills      | コミット整理 (rebase/squash) | `/git:commit-organizer`       |
+| 5   | Claude Skills      | PR 作成                      | `/pr-create`                  |
+| 6   | Gemini Code Assist | PR レビュー                  | Gemini Code Assist for GitHub |
 
 ## ディレクトリ構成
 
@@ -66,3 +66,12 @@ AI (Claude Code / Gemini Code Assist) を組み込んで **コーディングで
 ## 参加までにやっておくこと
 
 → [docs/00-prerequisites.md](docs/00-prerequisites.md)
+
+## ドキュメントをローカルで開く (VitePress)
+
+```bash
+npm install
+npm run docs:dev      # http://localhost:5173 で閲覧
+npm run docs:build    # 静的ビルド (docs/.vitepress/dist)
+npm run docs:preview  # ビルド結果のプレビュー
+```

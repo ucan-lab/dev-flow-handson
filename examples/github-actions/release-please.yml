@@ -1,0 +1,20 @@
+name: release-please
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: googleapis/release-please-action@v4
+        with:
+          # simple: 単一パッケージで最小構成。node/python等に合わせて変更可。
+          release-type: simple
+          # 初回導入時のみ。既に運用中なら release-please-manifest.json を使うこと。
+          # default-branch: main

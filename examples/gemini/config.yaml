@@ -1,0 +1,21 @@
+# .gemini/config.yaml
+# Gemini Code Assist for GitHub の設定
+# 参考: https://developers.google.com/gemini-code-assist/docs/review-github-code
+
+have_fun: false           # 絵文字ノリを抑える
+code_review:
+  disable: false
+  comment_severity_threshold: MEDIUM   # LOW ノイズを抑制
+  max_review_comments: -1              # 無制限
+  pull_request_opened:
+    help: false           # "How to use" メッセージを毎回出さない
+    summary: true         # PR サマリコメントを付与
+    code_review: true     # 自動レビュー
+  pull_request_synchronized:
+    code_review: true     # push の度に再レビュー
+ignore_patterns:
+  - "**/*.lock"
+  - "**/dist/**"
+  - "**/build/**"
+  - "**/node_modules/**"
+language: ja              # 日本語でレビューコメント
