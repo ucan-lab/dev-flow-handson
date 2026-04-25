@@ -18,7 +18,7 @@ features:
     details: release-please と Release Drafter + Claude で、push だけでリリース PR とリリースノートが生成される仕組みを導入する。
     link: /sections/01-release-pr
   - title: Claude Skills で省力化
-    details: /git:commit・/git:commit-organizer・/pr-create で、コミットから PR 提出までを 1 コマンドにまとめる。
+    details: /git:commit・/git:commit-organizer・/pr:create で、コミットから PR 提出までを 1 コマンドにまとめる。
     link: /sections/03-commit
   - title: Gemini Code Assist でレビュー
     details: PR に Gemini Code Assist を導入し、観点付きで自動レビューが返ってくる状態を作る。
@@ -39,7 +39,7 @@ AI (Claude Code / Gemini Code Assist) を組み込んで **コーディングで
 ## 当日のお土産
 
 1. リリース PR とリリースノートが **push だけで生成される** 仕組みを自分のリポジトリに導入できる
-2. `/git:commit` `/git:commit-organizer` `/pr-create` 系スキルで **PR 提出までを 1 コマンド化** できる
+2. `/git:commit` `/git:commit-organizer` `/pr:create` スキルで **PR 提出までを 1 コマンド化** できる
 3. Gemini Code Assist による **PR 自動レビュー** を有効化し、観点付きで指摘を返せるようになる
 
 ## 取り扱う自動化
@@ -47,11 +47,12 @@ AI (Claude Code / Gemini Code Assist) を組み込んで **コーディングで
 | #   | カテゴリ           | 自動化対象                   | 使うツール                    |
 | --- | ------------------ | ---------------------------- | ----------------------------- |
 | 1   | GitHub Actions     | リリース PR 作成             | release-please                |
-| 2   | GitHub Actions     | リリースノート生成           | Release Drafter + Claude      |
+| 2   | GitHub Actions     | リリースノート生成           | Release Drafter               |
 | 3   | Claude Skills      | コミット生成                 | `/git:commit`                 |
 | 4   | Claude Skills      | コミット整理 (rebase/squash) | `/git:commit-organizer`       |
-| 5   | Claude Skills      | PR 作成                      | `/pr-create`                  |
+| 5   | Claude Skills      | PR 作成                      | `/pr:create`                  |
 | 6   | Gemini Code Assist | PR レビュー                  | Gemini Code Assist for GitHub |
+| 7   | Claude Skills      | PR レビュー対応              | `/pr:review-respond`          |
 
 ## 進め方
 

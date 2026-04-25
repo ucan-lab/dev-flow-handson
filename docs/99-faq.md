@@ -26,17 +26,12 @@
 - PR にラベルが付いているか (`feature` / `bug` / `chore`)
 - `.github/release-drafter.yml` と workflow の両方を作ったか
 
-### Q. Claude ポリッシュワークフローが 401 / 403
-
-- `ANTHROPIC_API_KEY` が repo secrets に登録されているか
-- key の先頭が `sk-ant-` になっているか
-
 ## Section 3–5 (Claude Skills)
 
 ### Q. `/git:commit` がスキル一覧に出ない
 
-- スキルファイルの配置: `~/.claude/skills/<name>.md` or `<project>/.claude/skills/<name>.md`
-- frontmatter の `name:` が `/` を含む形式かを確認
+- スキルファイルの配置: `~/.claude/skills/<dir>/SKILL.md` or `<project>/.claude/skills/<dir>/SKILL.md` (ディレクトリ + `SKILL.md` の形式)
+- frontmatter の `name:` が `:` 区切りのネームスペース付き (例: `git:commit`) になっているか確認
 - Claude Code の再起動
 
 ### Q. コミットメッセージがいつも英語 (日本語が欲しい)

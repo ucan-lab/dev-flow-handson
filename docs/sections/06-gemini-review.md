@@ -47,7 +47,7 @@ gh pr create --fill
 ## カスタマイズの勘所
 
 - **レビュー言語を日本語に** → `config.yaml` の `language: ja`
-- **ノイズを減らす** → `severity_threshold: MEDIUM` 以上のみにする
+- **ノイズを減らす** → `comment_severity_threshold: MEDIUM` 以上のみにする
 - **特定ディレクトリだけレビュー** → `ignore_patterns` で除外
 - **ポリシー共有** → `styleguide.md` にチームの合意事項を書いておけば AI がそれに従う
 - セキュリティ観点 / パフォーマンス観点など複数の「レビュアー人格」を切り替えたい場合は config を複数運用 (ブランチ別)

@@ -48,6 +48,13 @@ export default defineConfig({
         ],
       },
       {
+        text: 'Claude Skills (応用)',
+        collapsed: false,
+        items: [
+          { text: 'Section 7: PR レビュー対応', link: '/sections/07-pr-review-respond' },
+        ],
+      },
+      {
         text: 'リファレンス',
         items: [{ text: 'FAQ / トラブルシューティング', link: '/99-faq' }],
       },

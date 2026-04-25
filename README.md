@@ -16,7 +16,7 @@ AI (Claude Code / Gemini Code Assist) を組み込んで **コーディングで
 ## ゴール (当日 = お土産)
 
 1. リリース PR とリリースノートが **push だけで生成される** 仕組みを自分のリポジトリに導入できる
-2. `/commit` `/commit-organizer` `/pr-create` 系スキルを使いこなし、**PR 提出までを 1 コマンド化** できる
+2. `/git:commit` `/git:commit-organizer` `/pr:create` スキルを使いこなし、**PR 提出までを 1 コマンド化** できる
 3. Gemini Code Assist による **PR 自動レビュー** を有効化し、観点付きで指摘を返せるようになる
 
 ## 取り扱う自動化
@@ -24,11 +24,12 @@ AI (Claude Code / Gemini Code Assist) を組み込んで **コーディングで
 | #   | カテゴリ           | 自動化対象                   | 使うツール                    |
 | --- | ------------------ | ---------------------------- | ----------------------------- |
 | 1   | GitHub Actions     | リリース PR 作成             | release-please                |
-| 2   | GitHub Actions     | リリースノート生成           | Release Drafter + Claude      |
+| 2   | GitHub Actions     | リリースノート生成           | Release Drafter               |
 | 3   | Claude Skills      | コミット生成                 | `/git:commit`                 |
 | 4   | Claude Skills      | コミット整理 (rebase/squash) | `/git:commit-organizer`       |
-| 5   | Claude Skills      | PR 作成                      | `/pr-create`                  |
+| 5   | Claude Skills      | PR 作成                      | `/pr:create`                  |
 | 6   | Gemini Code Assist | PR レビュー                  | Gemini Code Assist for GitHub |
+| 7   | Claude Skills      | PR レビュー対応              | `/pr:review-respond`          |
 
 ## ディレクトリ構成
 
@@ -44,7 +45,8 @@ AI (Claude Code / Gemini Code Assist) を組み込んで **コーディングで
 │   │   ├── 03-commit.md
 │   │   ├── 04-commit-organizer.md
 │   │   ├── 05-pr-create.md
-│   │   └── 06-gemini-review.md
+│   │   ├── 06-gemini-review.md
+│   │   └── 07-pr-review-respond.md
 │   └── 99-faq.md            # トラブルシューティング
 └── examples/                # 雛形
     ├── github-actions/
@@ -60,8 +62,9 @@ AI (Claude Code / Gemini Code Assist) を組み込んで **コーディングで
 2. Section 1–2: GitHub Actions 系 (50 分)
 3. 休憩 (10 分)
 4. Section 3–5: Claude Skills 系 (60 分)
-5. Section 6: Gemini Code Assist (20 分)
-6. 振り返り・質疑応答 (10 分)
+5. Section 6: Gemini Code Assist (15 分)
+6. Section 7: PR レビュー対応 (Claude Skills) (20 分)
+7. 振り返り・質疑応答 (10 分)
 
 ## 参加までにやっておくこと
 

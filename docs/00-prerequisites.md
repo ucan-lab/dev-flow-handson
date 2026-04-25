@@ -50,9 +50,8 @@ git push -u origin main
 
 ## 4. 配布する Secrets の取得 (当日の講師案内に従う)
 
-当日は以下を GitHub Actions の Secrets に登録します。事前に取得しておくとスムーズ。
+当日扱う自動化は基本的に追加 Secrets 不要です。
 
-- `ANTHROPIC_API_KEY` (リリースノート生成用 / 任意)
 - `GEMINI_API_KEY` は不要 (Gemini Code Assist は GitHub App として動作)
 
 ## 5. 動作確認チェック

@@ -1,6 +1,6 @@
 # Section 5: PR 作成自動化 (Claude Skills)
 
-使うツール: `/pr-create` スキル
+使うツール: `/pr:create` スキル
 
 ## Why — なぜやるか
 
@@ -11,7 +11,7 @@
 ## Demo — 完成形
 
 1. フィーチャーブランチで作業完了
-2. `/pr-create` を実行
+2. `/pr:create` を実行
 3. AI が `git log base..HEAD` と `git diff base...HEAD` を読み、次を生成:
    - PR タイトル (70 文字以内)
    - Summary (箇条書き 1–3 点)
@@ -23,12 +23,12 @@
 
 ### 1. スキル登録
 
-`examples/claude-skills/pr-create/SKILL.md` を `~/.claude/skills/pr-create.md` にコピー。
+`examples/claude-skills/pr-create/` ディレクトリごと `~/.claude/skills/pr-create/` にコピー (`SKILL.md` がディレクトリ直下にある形)。
 
 ### 2. 実行
 
 ```
-/pr-create
+/pr:create
 ```
 
 未 push のブランチなら自動で `git push -u origin <branch>` まで実行する (スキル側で確認ステップあり)。
