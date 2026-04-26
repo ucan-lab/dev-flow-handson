@@ -129,18 +129,32 @@ git push -u origin develop
 
 ### 6. 動かす
 
-`develop` に何かコミットして push すれば、git-pr-release がリリース PR を生成する。
+git-pr-release は **`develop` にマージされた PR** を集めてリリース PR を作る。なので「`develop` に直接 commit & push」ではなく、**feature ブランチ → PR → `develop` にマージ** の流れで動作確認する。
 
 ```bash
+# develop からトピックブランチを切る
 git switch develop
 git pull
+git switch -c feat/hello
+
+# 変更を作って push
 echo "console.log('hello')" > hello.js
 git add hello.js
 git commit -m "feat: hello スクリプトを追加"
-git push origin develop
+git push -u origin feat/hello
+
+# develop に対して PR を作成し、即マージ
+gh pr create --base develop --head feat/hello --fill
+gh pr merge --merge --delete-branch
 ```
 
-Actions タブで `git-pr-release` ジョブが走り、`develop → main` のリリース PR が生成 / 更新されることを確認。
+`develop` への push トリガで Actions が走り、`git-pr-release` ジョブが `develop → main` のリリース PR を生成 / 更新する。リリース PR の本文に、いま `develop` にマージしたばかりの `feat/hello` PR がチェックリストに載っていれば成功。
+
+::: tip 直接 push したらどうなる?
+
+`develop` に commit を直接 push した場合、git-pr-release は対象 PR を見つけられず `No pull requests to be released` で exit 1 になる。チーム運用では `develop` を保護ブランチにして PR 経由マージを強制するのが一般的。
+
+:::
 
 ## カスタマイズの勘所
 
