@@ -1,7 +1,8 @@
 import { defineConfig } from 'vitepress'
+import { withMermaid } from 'vitepress-plugin-mermaid'
 import taskLists from 'markdown-it-task-lists'
 
-export default defineConfig({
+export default withMermaid(defineConfig({
   title: 'AI 開発フロー自動化ハンズオン',
   description: '2026-05-07 開催 / Claude Code・Gemini Code Assist で開発フローを自動化する',
   lang: 'ja',
@@ -79,4 +80,4 @@ export default defineConfig({
       message: '2026-05-07 開催 / 開発フロー自動化ハンズオン',
     },
   },
-})
+}))
