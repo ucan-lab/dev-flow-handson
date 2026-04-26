@@ -78,3 +78,12 @@ npm run docs:dev      # http://localhost:5173 で閲覧
 npm run docs:build    # 静的ビルド (docs/.vitepress/dist)
 npm run docs:preview  # ビルド結果のプレビュー
 ```
+
+## Markdown を整形する (Prettier)
+
+```bash
+npm run format        # 整形を実行
+npm run format:check  # 差分チェックのみ (CI と同じ)
+```
+
+GitHub Actions (`.github/workflows/format-check.yml`) で PR 時に `format:check` が走る。
