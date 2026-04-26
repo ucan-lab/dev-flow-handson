@@ -5,7 +5,7 @@ Release <%= Time.now.strftime("%Y-%m-%d %H:%M") %>
 各 PR の内容を確認したらチェックを入れてください。リリース対象から外したい PR がある場合は、別途 revert PR を作成してマージしてください。
 
 <%- pull_requests.each do |pr| -%>
-- [ ] #<%= pr.number %> <%= pr.title %> @<%= pr.user.login %>
+- [ ] #<%= pr.number %> @<%= pr.user.login %>
 <%- end -%>
 
 ---
