@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import taskLists from 'markdown-it-task-lists'
 
 export default defineConfig({
   title: 'AI 開発フロー自動化ハンズオン',
@@ -7,6 +8,11 @@ export default defineConfig({
   lastUpdated: true,
   cleanUrls: true,
   base: process.env.DOCS_BASE ?? '/',
+  markdown: {
+    config: (md) => {
+      md.use(taskLists, { enabled: true })
+    },
+  },
   themeConfig: {
     nav: [
       { text: 'はじめに', link: '/' },
