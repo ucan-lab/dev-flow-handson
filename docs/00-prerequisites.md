@@ -6,6 +6,7 @@
 
 - [ ] **GitHub アカウント** (自分で push / workflow 編集できるリポジトリを 1 つ用意)
   - 既存リポジトリを使う場合は `Settings → Actions → General` で「Read and write permissions」を許可しておく
+    - URL 例: `https://github.com/<user-name>/dev-flow-handson-sandbox/settings/actions`
   - 「Allow GitHub Actions to create and approve pull requests」も ON にする
 - [ ] **Google アカウント** (Gemini Code Assist for GitHub を有効化するため)
 

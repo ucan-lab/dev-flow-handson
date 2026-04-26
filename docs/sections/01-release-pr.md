@@ -31,6 +31,7 @@
 ### 2. リポジトリ設定
 
 - `Settings → Actions → General`
+  - URL 例: `https://github.com/<user-name>/dev-flow-handson-sandbox/settings/actions`
   - "Workflow permissions" を **Read and write** に
   - "Allow GitHub Actions to create and approve pull requests" を ON
 

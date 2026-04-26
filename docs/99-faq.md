@@ -10,6 +10,7 @@
 ### Q. Actions が失敗する: `GITHUB_TOKEN` に write 権限がない
 
 - Repo `Settings → Actions → General → Workflow permissions` を "Read and write" に
+  - URL 例: `https://github.com/<user-name>/dev-flow-handson-sandbox/settings/actions`
 - Org レベルで制限されている場合は Org Admin に連絡
 
 ## Section 1 / 2 (GitHub Actions)
@@ -48,6 +49,7 @@
 ### Q. PR を作っても Gemini がコメントしない
 
 - App がそのリポジトリにインストールされているか (`Settings → GitHub Apps`)
+  - URL: `https://github.com/settings/installations`
 - プライベートリポジトリの場合は追加の権限許可が必要
 - 1–3 分のラグはあるので少し待つ
 
