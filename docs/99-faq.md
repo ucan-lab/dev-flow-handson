@@ -21,7 +21,7 @@
 - `main` と `develop` の両方が GitHub 上に存在するか
 - `develop` と `main` で差分があるか (差分ゼロだと "No diff" で終了)
 - `actions/checkout` で `fetch-depth: 0` を指定しているか (履歴がないと比較できない)
-- "Allow GitHub Actions to create and approve pull requests" が OFF だと PR 作成に失敗
+- `Settings → Actions → General` の **Workflow permissions** で "Allow GitHub Actions to create and approve pull requests" が OFF だと PR 作成に失敗
 
 ### Q. release-please / git-pr-release のどちらを使えば?
 

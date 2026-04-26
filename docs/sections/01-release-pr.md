@@ -116,13 +116,16 @@ git push -u origin develop
 
 ### 5. リポジトリ設定
 
-`Settings → Actions → General`
+`Settings → Actions → General` を以下に設定する。
 
 - URL 例: `https://github.com/<user-name>/dev-flow-handson-sandbox/settings/actions`
-- "Workflow permissions" を **Read and write** に
-  - 理由: git-pr-release が `GITHUB_TOKEN` を使ってリリース PR を作成 / 更新するため、書き込み権限が必須
-- "Allow GitHub Actions to create and approve pull requests" を ON
-  - 理由: Actions から PR を立てる動作が本体機能なので、OFF だと PR が生成されない
+- **Actions permissions** セクション (ページ上部): "Allow all actions and reusable workflows" が選択されていることを確認 (デフォルト)
+  - 理由: Marketplace の Action (`tagomoris/git-pr-release-action` など) を実行できる必要がある
+- **Workflow permissions** セクション (ページ下部):
+  - "Read and write permissions" を選択
+    - 理由: git-pr-release が `GITHUB_TOKEN` を使ってリリース PR を作成 / 更新するため、書き込み権限が必須
+  - "Allow GitHub Actions to create and approve pull requests" を ON
+    - 理由: Actions から PR を立てる動作が本体機能なので、OFF だと PR が生成されない
 
 ### 6. 動かす
 
