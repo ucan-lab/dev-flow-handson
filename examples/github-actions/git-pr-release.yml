@@ -28,6 +28,8 @@ jobs:
 
       - name: Create / Update release pull request
         env:
+          # PR タイトルの日時を日本時間で出力する
+          TZ: Asia/Tokyo
           # PR を作るので write 権限つきトークン
           GIT_PR_RELEASE_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # マージ元 / マージ先ブランチ
