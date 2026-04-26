@@ -86,11 +86,11 @@ OSS / SDK 寄りなら release-please の方が手数が少なく済みます。
 
 <<< ../../examples/github-actions/git-pr-release.yml [git-pr-release.yml]
 
-### 2. リポジトリ直下に `.git-pr-release-template.erb` (PR テンプレ) を追加
+### 2. `.github/git-pr-release-template.erb` (PR テンプレ) を追加
 
-リリース PR の本文テンプレ。`pull_requests` をループしてチェックリストを生成する。
+リリース PR の本文テンプレ。`pull_requests` をループしてチェックリストを生成する。`.github/release-drafter.yml` 等と並べて、リリース系の設定ファイルは `.github/` 配下に集約する。
 
-<<< ../../examples/github-actions/.git-pr-release-template.erb [.git-pr-release-template.erb]
+<<< ../../examples/github-actions/git-pr-release-template.erb [.github/git-pr-release-template.erb]
 
 ### 3. main にコミット & push
 
@@ -98,7 +98,7 @@ OSS / SDK 寄りなら release-please の方が手数が少なく済みます。
 
 ```bash
 git switch main
-git add .github/workflows/git-pr-release.yml .git-pr-release-template.erb
+git add .github/workflows/git-pr-release.yml .github/git-pr-release-template.erb
 git commit -m "ci: git-pr-release を導入"
 git push origin main
 ```
@@ -159,7 +159,7 @@ gh pr merge --merge --delete-branch
 ## カスタマイズの勘所
 
 - **PR タイトルに日付やバージョンを入れる**: ワークフローの env に `GIT_PR_RELEASE_TITLE_PREFIX` などを追加 (公式 README 参照)
-- **対象 PR の絞り込み**: ラベルやユーザーで除外したいときは `.git-pr-release-template.erb` テンプレ内で `pull_requests` を Ruby のフィルタで絞る
+- **対象 PR の絞り込み**: ラベルやユーザーで除外したいときは `.github/git-pr-release-template.erb` テンプレ内で `pull_requests` を Ruby のフィルタで絞る
 - **タグ打ち / デプロイ連携**: リリース PR がマージされた後の `pull_request: closed` トリガで別 Action を組み、`git tag` や本番デプロイを実施
 - **モノレポ**: パッケージ単位でリリースしたい場合は git-pr-release より release-please のほうが向く
 

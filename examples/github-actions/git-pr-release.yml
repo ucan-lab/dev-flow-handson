@@ -35,8 +35,8 @@ jobs:
           # マージ元 / マージ先ブランチ
           GIT_PR_RELEASE_BRANCH_PRODUCTION: main
           GIT_PR_RELEASE_BRANCH_STAGING: develop
-          # PR 本文テンプレ (リポジトリに .git-pr-release-template.erb を置いておく)
-          GIT_PR_RELEASE_TEMPLATE: .git-pr-release-template.erb
+          # PR 本文テンプレ (.github/git-pr-release-template.erb を置いておく)
+          GIT_PR_RELEASE_TEMPLATE: .github/git-pr-release-template.erb
           # PR タイトルに日付を入れておくとリリース履歴が追いやすい
           GIT_PR_RELEASE_LABELS: release
         run: git-pr-release --no-fetch
