@@ -7,7 +7,9 @@
 - [ ] **GitHub アカウント** (自分で push / workflow 編集できるリポジトリを 1 つ用意)
   - 既存リポジトリを使う場合は `Settings → Actions → General` で「Read and write permissions」を許可しておく
     - URL 例: `https://github.com/<user-name>/dev-flow-handson-sandbox/settings/actions`
+    - 理由: Release Please が `GITHUB_TOKEN` でタグ・GitHub Release・リリース PR を作成するため、書き込み権限が必要
   - 「Allow GitHub Actions to create and approve pull requests」も ON にする
+    - 理由: Release Please の中核機能は Actions からのリリース PR 自動作成。OFF のままだと PR が作られず動作しない
 - [ ] **Google アカウント** (Gemini Code Assist for GitHub を有効化するため)
 
 ## 2. ローカル環境

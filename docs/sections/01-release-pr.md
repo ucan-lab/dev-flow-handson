@@ -33,7 +33,9 @@
 - `Settings → Actions → General`
   - URL 例: `https://github.com/<user-name>/dev-flow-handson-sandbox/settings/actions`
   - "Workflow permissions" を **Read and write** に
+    - 理由: Release Please が `GITHUB_TOKEN` を使って release PR・タグ・GitHub Release を作成するため、書き込み権限が必須。デフォルトの read-only のままだと 403 で失敗する
   - "Allow GitHub Actions to create and approve pull requests" を ON
+    - 理由: Release Please の本体動作は「リリース用 PR を自動で作成する」こと。この設定が OFF だと Actions から PR を立てられず、リリース PR が生成されない
 
 ### 3. Conventional Commits ルールを共有
 
