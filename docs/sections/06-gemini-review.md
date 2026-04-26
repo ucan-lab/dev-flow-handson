@@ -37,7 +37,18 @@
 
 <<< ../../examples/gemini/styleguide.md [.gemini/styleguide.md]
 
-### 3. 動作確認
+### 3. main にコミット & push
+
+作った 2 ファイルを `main` に乗せる。以下をそのままコピペで OK。
+
+```bash
+git checkout main
+git add .gemini/config.yaml .gemini/styleguide.md
+git commit -m "chore: Gemini Code Assist の設定を追加"
+git push origin main
+```
+
+### 4. 動作確認
 
 ```bash
 git checkout -b test/gemini-review

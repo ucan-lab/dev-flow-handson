@@ -43,6 +43,15 @@
 
 <<< ../../examples/github-actions/PULL_REQUEST_TEMPLATE.md [.github/PULL_REQUEST_TEMPLATE.md]
 
+作ったら `main` に乗せる。以下をそのままコピペで OK。
+
+```bash
+git checkout main
+git add .github/PULL_REQUEST_TEMPLATE.md
+git commit -m "chore: PR テンプレートを追加"
+git push origin main
+```
+
 ## カスタマイズの勘所
 
 - 関連 Issue 番号を自動抽出 (ブランチ名 `feat/ABC-123-xxx` から `ABC-123` を抽出してリンク)

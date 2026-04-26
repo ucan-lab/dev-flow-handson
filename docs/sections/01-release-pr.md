@@ -92,21 +92,43 @@ OSS / SDK 寄りなら release-please の方が手数が少なく済みます。
 
 <<< ../../examples/github-actions/.git-pr-release [.git-pr-release]
 
-### 3. リポジトリ設定
+### 3. main にコミット & push
 
-- `Settings → Branches` で `main` / `develop` の 2 本を用意
-  - URL 例: `https://github.com/<user-name>/dev-flow-handson-sandbox/settings/branches`
-- `Settings → Actions → General`
-  - URL 例: `https://github.com/<user-name>/dev-flow-handson-sandbox/settings/actions`
-  - "Workflow permissions" を **Read and write** に
-    - 理由: git-pr-release が `GITHUB_TOKEN` を使ってリリース PR を作成 / 更新するため、書き込み権限が必須
-  - "Allow GitHub Actions to create and approve pull requests" を ON
-    - 理由: Actions から PR を立てる動作が本体機能なので、OFF だと PR が生成されない
-
-### 4. 動かす
+作った 2 ファイルを `main` に乗せて、GitHub 側に届ける。以下をそのままコピペで OK。
 
 ```bash
-# develop ブランチで feature をマージしたあと
+git checkout main
+git add .github/workflows/git-pr-release.yml .git-pr-release
+git commit -m "ci: git-pr-release を導入"
+git push origin main
+```
+
+### 4. develop ブランチを作成 & push
+
+`main` から `develop` を切って push する。これで git-pr-release が動く土台が整う。
+
+```bash
+git checkout -b develop
+git push -u origin develop
+```
+
+ブランチ一覧の確認 URL: `https://github.com/<user-name>/dev-flow-handson-sandbox/branches`
+
+### 5. リポジトリ設定
+
+`Settings → Actions → General`
+
+- URL 例: `https://github.com/<user-name>/dev-flow-handson-sandbox/settings/actions`
+- "Workflow permissions" を **Read and write** に
+  - 理由: git-pr-release が `GITHUB_TOKEN` を使ってリリース PR を作成 / 更新するため、書き込み権限が必須
+- "Allow GitHub Actions to create and approve pull requests" を ON
+  - 理由: Actions から PR を立てる動作が本体機能なので、OFF だと PR が生成されない
+
+### 6. 動かす
+
+`develop` に何かコミットして push すれば、git-pr-release がリリース PR を生成する。
+
+```bash
 git checkout develop
 git pull
 echo "console.log('hello')" > hello.js
