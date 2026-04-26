@@ -42,7 +42,7 @@
 作った 2 ファイルを `main` に乗せる。以下をそのままコピペで OK。
 
 ```bash
-git checkout main
+git switch main
 git add .gemini/config.yaml .gemini/styleguide.md
 git commit -m "chore: Gemini Code Assist の設定を追加"
 git push origin main
@@ -51,7 +51,7 @@ git push origin main
 ### 4. 動作確認
 
 ```bash
-git checkout -b test/gemini-review
+git switch -c test/gemini-review
 echo "const x=1" > sample.ts     # 意図的に乱雑なコード
 git add sample.ts
 git commit -m "feat: add sample"

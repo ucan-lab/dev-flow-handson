@@ -46,7 +46,7 @@
 作ったら `main` に乗せる。以下をそのままコピペで OK。
 
 ```bash
-git checkout main
+git switch main
 git add .github/PULL_REQUEST_TEMPLATE.md
 git commit -m "chore: PR テンプレートを追加"
 git push origin main

@@ -97,7 +97,7 @@ OSS / SDK 寄りなら release-please の方が手数が少なく済みます。
 作った 2 ファイルを `main` に乗せて、GitHub 側に届ける。以下をそのままコピペで OK。
 
 ```bash
-git checkout main
+git switch main
 git add .github/workflows/git-pr-release.yml .git-pr-release
 git commit -m "ci: git-pr-release を導入"
 git push origin main
@@ -108,7 +108,7 @@ git push origin main
 `main` から `develop` を切って push する。これで git-pr-release が動く土台が整う。
 
 ```bash
-git checkout -b develop
+git switch -c develop
 git push -u origin develop
 ```
 
@@ -129,7 +129,7 @@ git push -u origin develop
 `develop` に何かコミットして push すれば、git-pr-release がリリース PR を生成する。
 
 ```bash
-git checkout develop
+git switch develop
 git pull
 echo "console.log('hello')" > hello.js
 git add hello.js
