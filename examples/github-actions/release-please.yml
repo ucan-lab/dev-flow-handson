@@ -1,3 +1,6 @@
+# NOTE: 本ハンズオン Section 1 では git-pr-release を採用しています。
+# 本ファイルは比較対象として残している release-please の雛形です。
+# main 一本運用 + Conventional Commits を強制できるリポジトリで使うと便利。
 name: release-please
 
 on:

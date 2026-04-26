@@ -1,0 +1,40 @@
+name: git-pr-release
+
+on:
+  push:
+    branches: [develop]
+  # 任意でワークフロー画面から手動実行も可能にしておく
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  release-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # git-pr-release は develop と main の両方の履歴を必要とする
+          fetch-depth: 0
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+
+      - name: Install git-pr-release
+        run: gem install --no-document git-pr-release
+
+      - name: Create / Update release pull request
+        env:
+          # PR を作るので write 権限つきトークン
+          GIT_PR_RELEASE_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # マージ元 / マージ先ブランチ
+          GIT_PR_RELEASE_BRANCH_PRODUCTION: main
+          GIT_PR_RELEASE_BRANCH_STAGING: develop
+          # PR 本文テンプレ (リポジトリに .git-pr-release を置いておく)
+          GIT_PR_RELEASE_TEMPLATE: .git-pr-release
+          # PR タイトルに日付を入れておくとリリース履歴が追いやすい
+          GIT_PR_RELEASE_LABELS: release
+        run: git-pr-release --no-fetch

@@ -15,7 +15,7 @@ hero:
 
 features:
   - title: GitHub Actions で自動化
-    details: release-please と Release Drafter + Claude で、push だけでリリース PR とリリースノートが生成される仕組みを導入する。
+    details: git-pr-release と Release Drafter + Claude で、push だけでリリース PR とリリースノートが生成される仕組みを導入する。
     link: /sections/01-release-pr
   - title: Claude Skills で省力化
     details: /git:commit・/git:commit-organizer・/pr:create で、コミットから PR 提出までを 1 コマンドにまとめる。
@@ -46,7 +46,7 @@ AI (Claude Code / Gemini Code Assist) を組み込んで **コーディングで
 
 | #   | カテゴリ           | 自動化対象                   | 使うツール                    |
 | --- | ------------------ | ---------------------------- | ----------------------------- |
-| 1   | GitHub Actions     | リリース PR 作成             | release-please                |
+| 1   | GitHub Actions     | リリース PR 作成             | git-pr-release                |
 | 2   | GitHub Actions     | リリースノート生成           | Release Drafter               |
 | 3   | Claude Skills      | コミット生成                 | `/git:commit`                 |
 | 4   | Claude Skills      | コミット整理 (rebase/squash) | `/git:commit-organizer`       |

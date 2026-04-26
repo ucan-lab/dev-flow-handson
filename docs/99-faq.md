@@ -15,12 +15,19 @@
 
 ## Section 1 / 2 (GitHub Actions)
 
-### Q. release-please が PR を作ってくれない
+### Q. git-pr-release が PR を作ってくれない
 
-- `main` 以外にコミットしていないか
-- 直近のコミットが `feat:` / `fix:` で始まっているか (Conventional Commits)
-- Actions タブのログで "No release necessary" が出ていないか
+- `develop` 以外にコミットしていないか (push トリガは `develop`)
+- `main` と `develop` の両方が GitHub 上に存在するか
+- `develop` と `main` で差分があるか (差分ゼロだと "No diff" で終了)
+- `actions/checkout` で `fetch-depth: 0` を指定しているか (履歴がないと比較できない)
 - "Allow GitHub Actions to create and approve pull requests" が OFF だと PR 作成に失敗
+
+### Q. release-please / git-pr-release のどちらを使えば?
+
+- `develop`/`main` の二段ブランチ運用 → git-pr-release
+- `main` 一本 + Conventional Commits + CHANGELOG/タグも自動化 → release-please
+- Section 1 の比較表参照
 
 ### Q. Release Drafter が動かない
 

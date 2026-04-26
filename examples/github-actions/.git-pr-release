@@ -1,0 +1,17 @@
+<%- pull_requests.each do |pr| -%>
+- [ ] #<%= pr.number %> <%= pr.title %> @<%= pr.user.login %>
+<%- end -%>
+
+---
+
+## このリリース PR について
+
+- ベースブランチ: `main`
+- マージ元: `develop`
+- リリース対象: 上記チェックリストの PR をマージ
+
+## リリース手順
+
+1. チェックリストの内容に問題がないか確認
+2. 本 PR を `Squash and merge` ではなく **Merge commit** でマージ
+3. 必要であればタグを打つ (例: `git tag vX.Y.Z && git push --tags`)

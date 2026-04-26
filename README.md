@@ -23,7 +23,7 @@ AI (Claude Code / Gemini Code Assist) を組み込んで **コーディングで
 
 | #   | カテゴリ           | 自動化対象                   | 使うツール                    |
 | --- | ------------------ | ---------------------------- | ----------------------------- |
-| 1   | GitHub Actions     | リリース PR 作成             | release-please                |
+| 1   | GitHub Actions     | リリース PR 作成             | git-pr-release                |
 | 2   | GitHub Actions     | リリースノート生成           | Release Drafter               |
 | 3   | Claude Skills      | コミット生成                 | `/git:commit`                 |
 | 4   | Claude Skills      | コミット整理 (rebase/squash) | `/git:commit-organizer`       |
