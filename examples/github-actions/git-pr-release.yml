@@ -34,9 +34,6 @@ jobs:
           GIT_PR_RELEASE_BRANCH_PRODUCTION: main
           GIT_PR_RELEASE_BRANCH_STAGING: develop
           # PR 本文テンプレ (リポジトリに .git-pr-release-template.erb を置いておく)
-          # NOTE: ファイル名を .git-pr-release にしないこと。git-pr-release は
-          #       .git-pr-release を git-config 形式の設定ファイルとして読むため、
-          #       同名にすると "fatal: bad config line" で失敗する
           GIT_PR_RELEASE_TEMPLATE: .git-pr-release-template.erb
           # PR タイトルに日付を入れておくとリリース履歴が追いやすい
           GIT_PR_RELEASE_LABELS: release

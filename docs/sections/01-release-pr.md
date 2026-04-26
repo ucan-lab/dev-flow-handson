@@ -92,10 +92,6 @@ OSS / SDK 寄りなら release-please の方が手数が少なく済みます。
 
 <<< ../../examples/github-actions/.git-pr-release-template.erb [.git-pr-release-template.erb]
 
-::: warning ファイル名の注意
-ファイル名を `.git-pr-release` にしないこと。git-pr-release は `.git-pr-release` を **git-config 形式の設定ファイル** として読むため、テンプレ ERB を同名で置くと `fatal: bad config line 1 in file .git-pr-release` で落ちる。
-:::
-
 ### 3. main にコミット & push
 
 作った 2 ファイルを `main` に乗せて、GitHub 側に届ける。以下をそのままコピペで OK。
