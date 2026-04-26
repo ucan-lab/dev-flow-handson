@@ -14,7 +14,7 @@ jobs:
   release-pr:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           # git-pr-release は develop と main の両方の履歴を必要とする
           fetch-depth: 0
