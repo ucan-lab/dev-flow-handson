@@ -29,7 +29,13 @@
 - `.gemini/config.yaml` — レビュー観点 / 対象ブランチ / 言語を定義
 - `.gemini/styleguide.md` — チーム固有のコーディング規約 (任意)
 
-雛形: `examples/gemini/config.yaml` / `examples/gemini/styleguide.md`
+#### `.gemini/config.yaml`
+
+<<< ../../examples/gemini/config.yaml [.gemini/config.yaml]
+
+#### `.gemini/styleguide.md`
+
+<<< ../../examples/gemini/styleguide.md [.gemini/styleguide.md]
 
 ### 3. 動作確認
 

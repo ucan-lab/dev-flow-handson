@@ -25,7 +25,9 @@ Claude Code 起動中に以下を実行:
 /git:commit
 ```
 
-「そのようなスキルはありません」と出た場合は、`~/.claude/skills/git-commit/SKILL.md` があるか確認。無ければ `examples/claude-skills/git-commit/` ディレクトリごと `~/.claude/skills/` 配下にコピー。
+「そのようなスキルはありません」と出た場合は、`~/.claude/skills/git-commit/SKILL.md` があるか確認。無ければ以下の内容で `~/.claude/skills/git-commit/SKILL.md` を作成 (右上のコピーボタンで取得)。
+
+<<< ../../examples/claude-skills/git-commit/SKILL.md [~/.claude/skills/git-commit/SKILL.md]
 
 ### 2. サンプル運用
 

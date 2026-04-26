@@ -23,7 +23,9 @@
 
 ### 1. スキル登録
 
-`examples/claude-skills/pr-create/` ディレクトリごと `~/.claude/skills/pr-create/` にコピー (`SKILL.md` がディレクトリ直下にある形)。
+以下の内容で `~/.claude/skills/pr-create/SKILL.md` を作成 (右上のコピーボタン)。
+
+<<< ../../examples/claude-skills/pr-create/SKILL.md [~/.claude/skills/pr-create/SKILL.md]
 
 ### 2. 実行
 
@@ -36,7 +38,10 @@
 ### 3. PR テンプレートとの統合
 
 リポジトリに `.github/PULL_REQUEST_TEMPLATE.md` がある場合、スキルはその構造を尊重してセクションを埋める。
-本ハンズオン用テンプレート: `examples/github-actions/PULL_REQUEST_TEMPLATE.md`
+
+本ハンズオン用テンプレート:
+
+<<< ../../examples/github-actions/PULL_REQUEST_TEMPLATE.md [.github/PULL_REQUEST_TEMPLATE.md]
 
 ## カスタマイズの勘所
 

@@ -24,7 +24,9 @@
 
 ### 1. `.github/workflows/release-please.yml` を追加
 
-`examples/github-actions/release-please.yml` をコピーしてください。
+以下の内容をそのままコピーしてください (右上のコピーボタン)。
+
+<<< ../../examples/github-actions/release-please.yml [release-please.yml]
 
 ### 2. リポジトリ設定
 

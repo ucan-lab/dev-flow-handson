@@ -19,7 +19,9 @@
 
 ### 1. スキル登録
 
-`examples/claude-skills/pr-review-respond/` ディレクトリごと `~/.claude/skills/pr-review-respond/` にコピー (`SKILL.md` がディレクトリ直下にある形)。
+以下の内容で `~/.claude/skills/pr-review-respond/SKILL.md` を作成 (右上のコピーボタン)。
+
+<<< ../../examples/claude-skills/pr-review-respond/SKILL.md [~/.claude/skills/pr-review-respond/SKILL.md]
 
 ### 2. 実行
 

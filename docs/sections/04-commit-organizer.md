@@ -24,7 +24,13 @@ AI に **意図でグルーピングしてもらう** ことで、安全に reba
 - 作業中のブランチが `main` / `master` 以外であること
 - 未 push、または自分だけが使っているリモートブランチ (force push が許される)
 
-### 2. 実行
+### 2. スキル登録
+
+未登録なら以下の内容で `~/.claude/skills/git-commit-organizer/SKILL.md` を作成 (右上のコピーボタン)。
+
+<<< ../../examples/claude-skills/git-commit-organizer/SKILL.md [~/.claude/skills/git-commit-organizer/SKILL.md]
+
+### 3. 実行
 
 ```
 /git:commit-organizer
@@ -45,7 +51,7 @@ AI は:
    ```
 4. ユーザーが OK なら rebase を実行
 
-### 3. 安全策
+### 4. 安全策
 
 - **必ず作業前にバックアップ**:
   ```bash

@@ -16,9 +16,17 @@ release-please の自動 CHANGELOG は **機械的** で、人間向けハイラ
 
 ## How — 手順
 
-1. `.github/release-drafter.yml` を追加 (雛形: `examples/github-actions/release-drafter.yml`)
-2. `.github/workflows/release-drafter.yml` を追加 (雛形: `examples/github-actions/release-drafter-workflow.yml`)
-3. PR に ラベル (`feature` / `bug` / `chore`) を付ける運用を開始
+### 1. `.github/release-drafter.yml` を追加
+
+<<< ../../examples/github-actions/release-drafter.yml [release-drafter.yml]
+
+### 2. `.github/workflows/release-drafter.yml` を追加
+
+<<< ../../examples/github-actions/release-drafter-workflow.yml [release-drafter-workflow.yml]
+
+### 3. PR ラベル運用
+
+PR に ラベル (`feature` / `bug` / `chore`) を付ける運用を開始する。
 
 ## カスタマイズの勘所
 
