@@ -4,7 +4,7 @@ layout: home
 hero:
   name: AI 開発フロー自動化
   text: ハンズオン
-  tagline: Claude Code と Gemini Code Assist で開発フロー自体を自動化する
+  tagline: GitHub Actions × Claude Skills × Gemini Code Assist で「コーディング以外」を自動化する
   actions:
     - theme: brand
       text: 事前準備を見る
@@ -15,25 +15,36 @@ hero:
 
 features:
   - title: GitHub Actions で自動化
-    details: git-pr-release と Release Drafter + Claude で、push だけでリリース PR とリリースノートが生成される仕組みを導入する。
+    details: git-pr-release と Release Drafter で、push だけでリリース PR とリリースノートが自動生成される仕組みを導入する。
     link: /sections/01-release-pr
   - title: Claude Skills で省力化
-    details: /git:commit・/git:commit-organizer・/pr:create で、コミットから PR 提出までを 1 コマンドにまとめる。
+    details: /git:commit・/git:commit-organizer・/pr:create で、普段のコミットから PR 提出までをコマンド 1 つに圧縮する。
     link: /sections/03-commit
-  - title: Gemini Code Assist でレビュー
-    details: PR に Gemini Code Assist を導入し、観点付きで自動レビューが返ってくる状態を作る。
+  - title: Gemini Code Assist で自動レビュー
+    details: GitHub App を入れるだけで、PR に無料で AI レビューが返ってくる状態を作る。
     link: /sections/06-gemini-review
 ---
 
-## ねらい
+## このハンズオンの目的
 
-AI (Claude Code / Gemini Code Assist) を組み込んで **コーディングではなく開発フロー自体** を自動化する。
-既存の GitHub Actions ベースの自動化に AI レイヤーを重ね、日々の定型作業をゼロに近づけるのがゴール。
+**コーディングではなく、コーディングの "周辺作業" を自動化する** ことがゴールです。
+リリース PR を切る、コミットメッセージを書く、PR を作る、レビューを依頼する — こうした毎日繰り返している定型作業を、AI と GitHub Actions で限りなくゼロに近づけます。
+
+このハンズオンで扱うのは次の 3 本柱です。
+
+1. **GitHub Actions による自動化** — リリース PR 作成 / リリースノート生成
+2. **Claude Skills によるローカル作業の自動化** — コミット・コミット整理・PR 作成・レビュー対応
+3. **Gemini Code Assist による無料の PR 自動レビュー**
+
+::: warning このハンズオンで扱わないこと
+**自動テスト・自動デプロイなど CI/CD パイプラインの構築は対象外** です。
+GitHub Actions は使いますが、テスト実行やデプロイ自動化ではなく、**リリースフローの定型作業を AI で省力化する** 用途に限定します。
+:::
 
 ## 対象
 
 - 日常的に Git / GitHub / GitHub Actions を使っているエンジニア
-- Claude Code をインストール済み (未導入でも当日対応可)
+- Claude Code をインストール済み (有償サブスクリプション契約済み前提)
 - 自分のリポジトリで試したい自動化の候補が 1 つ以上ある人
 
 ## 当日のお土産

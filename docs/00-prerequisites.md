@@ -5,15 +5,6 @@
 ## 1. アカウント / 権限
 
 - [ ] **GitHub アカウント** (自分で push / workflow 編集できるリポジトリを 1 つ用意)
-  - 既存リポジトリを使う場合は `Settings → Actions → General` で以下を設定しておく
-    - URL 例: `https://github.com/<user-name>/dev-flow-handson-sandbox/settings/actions`
-    - **Actions permissions** セクション (ページ上部): 「Allow all actions and reusable workflows」が選択されていることを確認 (デフォルト)
-      - 理由: ハンズオンで使う Marketplace の Action (release-please-action / git-pr-release / release-drafter など) が実行できる必要がある
-    - **Workflow permissions** セクション (ページ下部):
-      - 「Read and write permissions」を選択
-        - 理由: Release Please が `GITHUB_TOKEN` でタグ・GitHub Release・リリース PR を作成するため、書き込み権限が必要
-      - 「Allow GitHub Actions to create and approve pull requests」を ON
-        - 理由: Release Please の中核機能は Actions からのリリース PR 自動作成。OFF のままだと PR が作られず動作しない
 - [ ] **Google アカウント** (Gemini Code Assist for GitHub を有効化するため)
 
 ## 2. ローカル環境
@@ -29,8 +20,8 @@
 ### Claude Code
 
 - [ ] Claude Code をインストール ([公式ガイド](https://docs.claude.com/claude-code))
+- [ ] 有償サブスクリプション (Pro / Max / Team) を契約済み
 - [ ] `claude --version` で起動確認
-- [ ] `~/.claude/` に書き込み権限があること
 
 ### `gh` 認証
 
