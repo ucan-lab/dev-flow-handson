@@ -1,6 +1,6 @@
 # Section 4: コミット整理自動化 (Claude Skills)
 
-使うツール: `/git:commit-organizer` スキル
+使うツール: `/git-commit-organizer` スキル
 
 ## Why — なぜやるか
 
@@ -13,7 +13,7 @@ AI に **意図でグルーピングしてもらう** ことで、安全に reba
 ## Demo — 完成形
 
 1. フィーチャーブランチに 10 個ほどの WIP コミットがある状態
-2. `/git:commit-organizer` を実行
+2. `/git-commit-organizer` を実行
 3. AI が「このブランチはこう 3 つに再構成するのが自然」と提案
 4. 承認すると rebase / reword / fixup を自動実行
 
@@ -33,7 +33,7 @@ AI に **意図でグルーピングしてもらう** ことで、安全に reba
 ### 3. 実行
 
 ```
-/git:commit-organizer
+/git-commit-organizer
 ```
 
 AI は:

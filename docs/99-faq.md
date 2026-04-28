@@ -36,10 +36,10 @@
 
 ## Section 3–5 (Claude Skills)
 
-### Q. `/git:commit` がスキル一覧に出ない
+### Q. `/git-commit` がスキル一覧に出ない
 
 - スキルファイルの配置: `~/.claude/skills/<dir>/SKILL.md` or `<project>/.claude/skills/<dir>/SKILL.md` (ディレクトリ + `SKILL.md` の形式)
-- frontmatter の `name:` が `:` 区切りのネームスペース付き (例: `git:commit`) になっているか確認
+- frontmatter の `name:` がディレクトリ名と一致しているか確認 (例: `git-commit`)
 - Claude Code の再起動
 
 ### Q. コミットメッセージがいつも英語 (日本語が欲しい)

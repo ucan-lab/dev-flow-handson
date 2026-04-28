@@ -1,6 +1,6 @@
 # Section 7: PR レビュー対応自動化 (Claude Skills)
 
-使うツール: `/pr:review-respond` スキル
+使うツール: `/pr-review-respond` スキル
 
 ## Why — なぜやるか
 
@@ -11,7 +11,7 @@
 ## Demo — 完成形
 
 1. PR に未解決のレビューコメントが N 件残っている状態
-2. `/pr:review-respond` を実行
+2. `/pr-review-respond` を実行
 3. AI が未解決コメントを集計し、各指摘について「対応 / 議論 / 対応しない」の方針案を提示
 4. 承認後、指摘ごとに 1 コミット → push、各コメントに `@reviewer` メンション付きで返信
 
@@ -28,13 +28,13 @@
 PR が紐づいているフィーチャーブランチ上で:
 
 ```
-/pr:review-respond
+/pr-review-respond
 ```
 
 PR 番号を明示したい場合は引数で指定:
 
 ```
-/pr:review-respond 123
+/pr-review-respond 123
 ```
 
 ### 3. 提示フォーマット
@@ -76,7 +76,7 @@ PR 番号を明示したい場合は引数で指定:
 ## 禁止事項 (スキル側でガード済み)
 
 - ユーザー承認なしのコミット / push / コメント投稿
-- `--force` push (履歴整理が必要なら `/git:commit-organizer` を案内)
+- `--force` push (履歴整理が必要なら `/git-commit-organizer` を案内)
 - 解決済みスレッドへの蒸し返し
 
 ## チェックポイント
