@@ -2,11 +2,38 @@
 
 使うツール: [Gemini Code Assist for GitHub](https://github.com/apps/gemini-code-assist) (GitHub App)
 
+## Gemini Code Assist とは
+
+Google が提供する AI 開発支援サービス。IDE 用の補完 / チャット機能と、本セクションで使う **GitHub 上で PR を自動レビューしてくれる GitHub App** がある。GitHub App 単体なら GitHub アカウントだけで利用可能 (Google Cloud プロジェクト不要)。
+
+### 無料枠 (Individual / Consumer)
+
+| 項目                                  | 無料枠                |
+| ------------------------------------- | --------------------- |
+| **PR レビュー (GitHub App)**          | **33 PR / 日**        |
+| IDE 補完・チャット (Code Assist 全体) | 1,000 リクエスト / 日 |
+| ローカルコンテキスト                  | 100 万トークン        |
+
+> 個人 OSS / 小規模リポジトリなら無料枠で十分。社内利用で 33 PR/日では足りない場合は Standard (1,500 req/日) / Enterprise (100+ PR レビュー/日) を検討。
+
+### 主要モデル
+
+最新世代の Gemini モデルが使われる (`config.yaml` で固定指定はせず、Google 側でアップデートされる)。
+
+### 公式リンク
+
+- 概要 (Google Developers): <https://developers.google.com/gemini-code-assist/docs/overview>
+- 無料枠 / 上限: <https://developers.google.com/gemini-code-assist/resources/quotas>
+- GitHub App インストール: <https://github.com/apps/gemini-code-assist>
+- 料金プラン (Google Cloud): <https://cloud.google.com/products/gemini/pricing>
+- GitHub での使い方ドキュメント: <https://developers.google.com/gemini-code-assist/docs/review-github-code>
+
 ## Why — なぜやるか
 
 - 小さな PR こそ人間レビュアーが後回しにされがち
 - 「lint で十分な指摘」を人間がやるのはもったいない
 - 2 枚目の目として常時稼働する AI レビュアーが欲しい
+- 実装に Claude を使っている場合、レビューも Claude だと「同じモデルの思い込み」を見逃しがち。**別モデル (Gemini) の視点** を挟むことで、片方が見落としたパターンや別解にも気付ける
 
 ## Demo — 完成形
 
