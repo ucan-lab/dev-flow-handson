@@ -15,6 +15,25 @@
 3. AI が diff を読み、`feat: ...` / `fix: ...` を含む候補メッセージを提示
 4. 承認するとコミットする
 
+## 準備
+
+練習用の空リポジトリ を用意します。
+
+```bash
+# 例: GitHub 上に空のリポジトリを作成
+gh repo create dev-flow-handson-sandbox --public --clone
+cd dev-flow-handson-sandbox
+
+# README を作って初回コミット
+echo "# dev-flow-handson-sandbox" > README.md
+git add README.md
+git commit -m "chore: initial commit"
+git push -u origin main
+
+# リポジトリを表示
+gh repo view --web
+```
+
 ## How — 手順
 
 ### 1. スキルの確認

@@ -72,23 +72,7 @@ github.com
 gh config set git_protocol ssh --host github.com
 ```
 
-## 3. 練習用リポジトリの用意
-
-練習用の空リポジトリ を用意します。
-
-```bash
-# 例: GitHub 上に空のリポジトリを作成
-gh repo create dev-flow-handson-sandbox --public --clone
-cd dev-flow-handson-sandbox
-
-# README を作って初回コミット
-echo "# dev-flow-handson-sandbox" > README.md
-git add README.md
-git commit -m "chore: initial commit"
-git push -u origin main
-```
-
-## 4. 動作確認チェック
+## 3. 動作確認チェック
 
 下のコマンドがすべて成功すれば OK。
 
