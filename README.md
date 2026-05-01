@@ -58,13 +58,11 @@ AI (Claude Code / Gemini Code Assist) を組み込んで **コーディングで
 
 詳細は [docs/01-agenda.md](docs/01-agenda.md) を参照。
 
-1. オープニング / ねらい共有 (10 分)
-2. Section 1–3: Claude Skills 系 (60 分)
-3. 休憩 (10 分)
-4. Section 4: Gemini Code Assist (15 分)
-5. Section 5: PR レビュー対応 (Claude Skills) (20 分)
-6. Section 6–7: GitHub Actions 系 (50 分)
-7. 振り返り・質疑応答 (10 分)
+1. オープニング / ねらい共有
+2. Section 1-3: Claude Skills 系
+3. Section 4: Gemini Code Assist
+4. Section 5: PR レビュー対応 (Claude Skills)
+5. Section 6-7: GitHub Actions 系
 
 ## 参加までにやっておくこと
 
