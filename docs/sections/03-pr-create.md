@@ -27,17 +27,10 @@
 
 <<< ../../examples/claude-skills/pr-create/SKILL.md [~/.claude/skills/pr-create/SKILL.md]
 
-### 2. 実行
-
-```
-/pr-create
-```
-
-未 push のブランチなら自動で `git push -u origin <branch>` まで実行する (スキル側で確認ステップあり)。
-
-### 3. PR テンプレートとの統合
+### 2. PR テンプレートとの統合
 
 リポジトリに `.github/PULL_REQUEST_TEMPLATE.md` がある場合、スキルはその構造を尊重してセクションを埋める。
+テンプレートは `/pr-create` 実行前に `main` へ入れる。後から追加しても、既に作った PR の本文には反映されない。
 
 本ハンズオン用テンプレート:
 
@@ -47,10 +40,28 @@
 
 ```bash
 git switch main
+git pull
 git add .github/PULL_REQUEST_TEMPLATE.md
 git commit -m "chore: PR テンプレートを追加"
 git push origin main
 ```
+
+### 3. PR 対象ブランチへ戻る
+
+Section 1 のサンプルを使っている場合は、コミット済みのブランチへ戻る。
+別のブランチを使う場合も、`main` ではなく PR 化したいフィーチャーブランチ上で実行する。
+
+```bash
+git switch feat/version-constant
+```
+
+### 4. 実行
+
+```
+/pr-create
+```
+
+未 push のブランチなら自動で `git push -u origin <branch>` まで実行する (スキル側で確認ステップあり)。
 
 ## カスタマイズの勘所
 

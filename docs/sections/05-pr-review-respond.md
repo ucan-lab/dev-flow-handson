@@ -25,6 +25,9 @@
 
 ### 2. 実行
 
+Section 4 で Gemini Code Assist のコメントが付いた PR を使う。
+Section 3 で作った PR を使う場合は、先に `/gemini review` でレビューコメントを発生させておく。
+
 PR が紐づいているフィーチャーブランチ上で:
 
 ```

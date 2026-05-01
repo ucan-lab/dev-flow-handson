@@ -77,6 +77,10 @@ git push origin main
 
 ### 4. 動作確認
 
+Section 3 で作った PR は、Gemini Code Assist のインストール前に open している可能性がある。
+その PR を使う場合は、設定後に PR コメントで `/gemini review` を投稿して再レビューを明示的にトリガする。
+新規 PR で確認するなら、以下の手順でよい。
+
 ```bash
 git switch -c test/gemini-review
 echo "const x=1" > sample.ts     # 意図的に乱雑なコード

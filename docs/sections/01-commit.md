@@ -79,7 +79,14 @@ Claude Code 起動中に以下を実行:
 
 ### 2. サンプル運用
 
+Section 3 の PR 作成につなげるため、`main` に直接コミットせずトピックブランチで作業する。
+
 ```bash
+# 練習用ブランチを作る
+git switch main
+git pull
+git switch -c feat/version-constant
+
 # ファイルを編集
 echo "export const version = '0.1.0'" > version.ts
 git add version.ts
