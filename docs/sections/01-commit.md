@@ -27,7 +27,7 @@ cd dev-flow-handson-sandbox
 # README を作って初回コミット
 echo "# dev-flow-handson-sandbox" > README.md
 git add README.md
-git commit -m "chore: initial commit"
+git commit -m "first commit"
 git push -u origin main
 
 # リポジトリを表示
