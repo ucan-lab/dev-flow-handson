@@ -74,7 +74,7 @@ gh config set git_protocol ssh --host github.com
 
 ## 3. 練習用リポジトリの用意
 
-当日 「自分のリポジトリでいきなり触る」 は事故のもと。**練習用の空リポジトリ** を用意してください。
+練習用の空リポジトリ を用意します。
 
 ```bash
 # 例: GitHub 上に空のリポジトリを作成
@@ -88,13 +88,7 @@ git commit -m "chore: initial commit"
 git push -u origin main
 ```
 
-## 4. 配布する Secrets の取得 (当日の講師案内に従う)
-
-当日扱う自動化は基本的に追加 Secrets 不要です。
-
-- `GEMINI_API_KEY` は不要 (Gemini Code Assist は GitHub App として動作)
-
-## 5. 動作確認チェック
+## 4. 動作確認チェック
 
 下のコマンドがすべて成功すれば OK。
 

@@ -18,7 +18,6 @@ export default withMermaid(defineConfig({
     nav: [
       { text: 'はじめに', link: '/' },
       { text: '事前準備', link: '/00-prerequisites' },
-      { text: 'アジェンダ', link: '/01-agenda' },
       { text: 'FAQ', link: '/99-faq' },
     ],
     sidebar: [
@@ -27,7 +26,6 @@ export default withMermaid(defineConfig({
         items: [
           { text: 'トップ', link: '/' },
           { text: '事前準備', link: '/00-prerequisites' },
-          { text: '当日アジェンダ', link: '/01-agenda' },
         ],
       },
       {

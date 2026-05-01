@@ -38,7 +38,6 @@ AI (Claude Code / Gemini Code Assist) を組み込んで **コーディングで
 ├── README.md                # 本ファイル
 ├── docs/
 │   ├── 00-prerequisites.md  # 事前準備
-│   ├── 01-agenda.md         # 当日タイムテーブル
 │   ├── sections/
 │   │   ├── 01-commit.md
 │   │   ├── 02-commit-organizer.md
@@ -55,8 +54,6 @@ AI (Claude Code / Gemini Code Assist) を組み込んで **コーディングで
 ```
 
 ## 当日の流れ (ダイジェスト)
-
-詳細は [docs/01-agenda.md](docs/01-agenda.md) を参照。
 
 1. オープニング / ねらい共有
 2. Section 1-3: Claude Skills 系
