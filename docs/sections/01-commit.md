@@ -4,16 +4,16 @@
 
 ## Why — なぜやるか
 
-- コミットメッセージを考える時間を毎回 30 秒〜 1 分取られている
-- Conventional Commits を徹底したいが、うっかり `update something` と書いてしまう
-- `git diff` を毎回読んで要点を掴むのは AI が得意な作業
+- git commit -m "fix: xxx" タイトルメッセージだけで済ませてしまう。
+- コミットメッセージの本文まで考えるのがめんどう
+- `git diff` を毎回読んで要点をAIにまとめてもらってコミットメッセージを提案してもらいたい
 
 ## Demo — 完成形
 
-1. `git add` で差分を staged に載せる
+1. 実装する
 2. Claude Code で `/git-commit` を実行
 3. AI が diff を読み、`feat: ...` / `fix: ...` を含む候補メッセージを提示
-4. 承認すると即コミット
+4. 承認するとコミットする
 
 ## How — 手順
 
@@ -53,6 +53,7 @@ Claude Code 起動中に以下を実行:
 - 現在ブランチ: !`git branch --show-current`
 - 作業ツリー状態: !`git status --short`
 - staged diff (要約): !`git diff --staged --stat`
+- unstaged diff (要約): !`git diff --stat`
 - 直近 5 コミット (スタイル参考用): !`git log -5 --oneline`
 ```
 
@@ -108,12 +109,6 @@ feat: expose package version constant
 ```
 
 `y` で承認 → コミット完了。
-
-## カスタマイズの勘所
-
-- プロジェクト固有のプレフィックス (例: `[ABC-123] feat: ...`) を強制 → プロンプトに固定前置き
-- 差分が大きいときに「1 コミットにまとめるか分割するか」を AI に判断させる → Section 2 の commit-organizer と組み合わせ
-- pre-commit フック落ちは amend せず新規コミット (global CLAUDE.md のルール) を徹底
 
 ## チェックポイント
 
