@@ -5,14 +5,14 @@
 | 時間          | 内容                                            | 形式       | 資料                               |
 | ------------- | ----------------------------------------------- | ---------- | ---------------------------------- |
 | 00:00 – 00:10 | オープニング / ゴール共有 / 自動化の現在地      | 講義       | `README.md`                        |
-| 00:10 – 00:35 | **Section 1** リリース PR 作成自動化            | ハンズオン | `sections/01-release-pr.md`        |
-| 00:35 – 01:00 | **Section 2** リリースノート作成自動化          | ハンズオン | `sections/02-release-notes.md`     |
-| 01:00 – 01:10 | 休憩 ☕                                         | —          | —                                  |
-| 01:10 – 01:30 | **Section 3** コミット自動化                    | ハンズオン | `sections/03-commit.md`            |
-| 01:30 – 01:50 | **Section 4** コミット整理自動化                | ハンズオン | `sections/04-commit-organizer.md`  |
-| 01:50 – 02:10 | **Section 5** PR 作成自動化                     | ハンズオン | `sections/05-pr-create.md`         |
-| 02:10 – 02:25 | **Section 6** Gemini Code Assist で PR レビュー | ハンズオン | `sections/06-gemini-review.md`     |
-| 02:25 – 02:45 | **Section 7** PR レビュー対応自動化             | ハンズオン | `sections/07-pr-review-respond.md` |
+| 00:10 – 00:30 | **Section 1** コミット自動化                    | ハンズオン | `sections/01-commit.md`            |
+| 00:30 – 00:50 | **Section 2** コミット整理自動化                | ハンズオン | `sections/02-commit-organizer.md`  |
+| 00:50 – 01:10 | **Section 3** PR 作成自動化                     | ハンズオン | `sections/03-pr-create.md`         |
+| 01:10 – 01:20 | 休憩 ☕                                         | —          | —                                  |
+| 01:20 – 01:35 | **Section 4** Gemini Code Assist で PR レビュー | ハンズオン | `sections/04-gemini-review.md`     |
+| 01:35 – 01:55 | **Section 5** PR レビュー対応自動化             | ハンズオン | `sections/05-pr-review-respond.md` |
+| 01:55 – 02:20 | **Section 6** リリース PR 作成自動化            | ハンズオン | `sections/06-release-pr.md`        |
+| 02:20 – 02:45 | **Section 7** リリースノート作成自動化          | ハンズオン | `sections/07-release-notes.md`     |
 | 02:45 – 02:55 | 振り返り / Q&A / 次アクション                   | 議論       | —                                  |
 
 ## セクション共通フォーマット

@@ -1,4 +1,4 @@
-# Section 5: PR 作成自動化 (Claude Skills)
+# Section 3: PR 作成自動化 (Claude Skills)
 
 使うツール: `/pr-create` スキル
 

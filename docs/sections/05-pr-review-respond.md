@@ -1,4 +1,4 @@
-# Section 7: PR レビュー対応自動化 (Claude Skills)
+# Section 5: PR レビュー対応自動化 (Claude Skills)
 
 使うツール: `/pr-review-respond` スキル
 

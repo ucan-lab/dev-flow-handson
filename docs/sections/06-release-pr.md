@@ -1,4 +1,4 @@
-# Section 1: リリース PR 作成自動化
+# Section 6: リリース PR 作成自動化
 
 使うツール: [git-pr-release](https://github.com/x-motemen/git-pr-release) (GitHub Action から実行)
 
@@ -169,4 +169,4 @@ gh pr merge --merge --delete-branch
 - [ ] `develop → main` のリリース PR がオープンしている (タイトルは "Release ..." 等)
 - [ ] リリース PR 本文に未リリース PR がチェックリストとして並んでいる
 
-→ 次は Section 2 (リリースノート) へ
+→ 次は Section 7 (リリースノート) へ

@@ -31,34 +31,34 @@ export default withMermaid(defineConfig({
         ],
       },
       {
-        text: 'GitHub Actions',
-        collapsed: false,
-        items: [
-          { text: 'Section 1: リリース PR 作成', link: '/sections/01-release-pr' },
-          { text: 'Section 2: リリースノート生成', link: '/sections/02-release-notes' },
-        ],
-      },
-      {
         text: 'Claude Skills',
         collapsed: false,
         items: [
-          { text: 'Section 3: コミット自動化', link: '/sections/03-commit' },
-          { text: 'Section 4: コミット整理', link: '/sections/04-commit-organizer' },
-          { text: 'Section 5: PR 作成', link: '/sections/05-pr-create' },
+          { text: 'Section 1: コミット自動化', link: '/sections/01-commit' },
+          { text: 'Section 2: コミット整理', link: '/sections/02-commit-organizer' },
+          { text: 'Section 3: PR 作成', link: '/sections/03-pr-create' },
         ],
       },
       {
         text: 'Gemini Code Assist',
         collapsed: false,
         items: [
-          { text: 'Section 6: PR レビュー', link: '/sections/06-gemini-review' },
+          { text: 'Section 4: PR レビュー', link: '/sections/04-gemini-review' },
         ],
       },
       {
-        text: 'Claude Skills (応用)',
+        text: 'Claude Skills (レビュー対応)',
         collapsed: false,
         items: [
-          { text: 'Section 7: PR レビュー対応', link: '/sections/07-pr-review-respond' },
+          { text: 'Section 5: PR レビュー対応', link: '/sections/05-pr-review-respond' },
+        ],
+      },
+      {
+        text: 'GitHub Actions',
+        collapsed: false,
+        items: [
+          { text: 'Section 6: リリース PR 作成', link: '/sections/06-release-pr' },
+          { text: 'Section 7: リリースノート生成', link: '/sections/07-release-notes' },
         ],
       },
       {

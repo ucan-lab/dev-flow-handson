@@ -13,7 +13,7 @@
   - URL 例: `https://github.com/<user-name>/dev-flow-handson-sandbox/settings/actions`
 - Org レベルで制限されている場合は Org Admin に連絡
 
-## Section 1 / 2 (GitHub Actions)
+## Section 6 / 7 (GitHub Actions)
 
 ### Q. git-pr-release が PR を作ってくれない
 
@@ -27,14 +27,14 @@
 
 - `develop`/`main` の二段ブランチ運用 → git-pr-release
 - `main` 一本 + Conventional Commits + CHANGELOG/タグも自動化 → release-please
-- Section 1 の比較表参照
+- Section 6 の比較表参照
 
 ### Q. Release Drafter が動かない
 
 - PR にラベルが付いているか (`feature` / `bug` / `chore`)
 - `.github/release-drafter.yml` と workflow の両方を作ったか
 
-## Section 3–5 (Claude Skills)
+## Section 1–3 (Claude Skills)
 
 ### Q. `/git-commit` がスキル一覧に出ない
 
@@ -51,7 +51,7 @@
 
 - スキル本体に「main / master では実行しない」ガードが入っている雛形を使うこと
 
-## Section 6 (Gemini Code Assist)
+## Section 4 (Gemini Code Assist)
 
 ### Q. PR を作っても Gemini がコメントしない
 

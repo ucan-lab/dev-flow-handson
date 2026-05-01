@@ -1,4 +1,4 @@
-# Section 3: コミット自動化 (Claude Skills)
+# Section 1: コミット自動化 (Claude Skills)
 
 使うツール: `/git-commit` スキル
 
@@ -105,7 +105,7 @@ feat: expose package version constant
 ## カスタマイズの勘所
 
 - プロジェクト固有のプレフィックス (例: `[ABC-123] feat: ...`) を強制 → プロンプトに固定前置き
-- 差分が大きいときに「1 コミットにまとめるか分割するか」を AI に判断させる → Section 4 の commit-organizer と組み合わせ
+- 差分が大きいときに「1 コミットにまとめるか分割するか」を AI に判断させる → Section 2 の commit-organizer と組み合わせ
 - pre-commit フック落ちは amend せず新規コミット (global CLAUDE.md のルール) を徹底
 
 ## チェックポイント

@@ -1,4 +1,4 @@
-# Section 4: コミット整理自動化 (Claude Skills)
+# Section 2: コミット整理自動化 (Claude Skills)
 
 使うツール: `/git-commit-organizer` スキル
 

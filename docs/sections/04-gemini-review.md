@@ -1,4 +1,4 @@
-# Section 6: PR レビュー自動化 (Gemini Code Assist)
+# Section 4: PR レビュー自動化 (Gemini Code Assist)
 
 使うツール: [Gemini Code Assist for GitHub](https://github.com/apps/gemini-code-assist) (GitHub App)
 
