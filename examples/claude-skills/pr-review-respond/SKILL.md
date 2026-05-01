@@ -1,5 +1,5 @@
 ---
-name: pr:review-respond
+name: pr-review-respond
 description: |
   現在のブランチに紐づく PR のレビューコメントを取得し、各指摘の妥当性を判断。
   対応方針一覧をユーザーへ提示し、承認後に指摘単位でコミット & push、

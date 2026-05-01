@@ -1,5 +1,5 @@
 ---
-name: pr:create
+name: pr-create
 description: |
   現在のブランチの変更内容を読み、PR タイトル / Summary / Test plan を生成し、
   ユーザー承認後に `gh pr create` で PR を作成する。

@@ -1,5 +1,5 @@
 ---
-name: git:commit-organizer
+name: git-commit-organizer
 description: |
   フィーチャーブランチのコミット履歴を読み、論理的なグループに再構成する案を提示。
   承認後に interactive rebase / squash / reword を安全に実行する。
