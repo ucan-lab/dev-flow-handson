@@ -52,14 +52,6 @@ export default withMermaid(defineConfig({
         ],
       },
       {
-        text: 'GitHub Actions',
-        collapsed: false,
-        items: [
-          { text: 'Section 6: リリース PR 作成', link: '/sections/06-release-pr' },
-          { text: 'Section 7: リリースノート生成', link: '/sections/07-release-notes' },
-        ],
-      },
-      {
         text: 'リファレンス',
         items: [{ text: 'FAQ / トラブルシューティング', link: '/99-faq' }],
       },

@@ -15,21 +15,19 @@ AI (Claude Code / Gemini Code Assist) を組み込んで **コーディングで
 
 ## ゴール (当日 = お土産)
 
-1. `/git:commit` `/git:commit-review` `/pr:create` スキルを使いこなし、**PR 提出までを 1 コマンド化** できる
+1. `/git-commit` `/git-commit-review` `/pr-create` スキルを使いこなし、**PR 提出までを 1 コマンド化** できる
 2. Gemini Code Assist による **PR 自動レビュー** を有効化し、観点付きで指摘を返せるようになる
-3. リリース PR とリリースノートが **push だけで生成される** 仕組みを自分のリポジトリに導入できる
+3. `/pr-feedback` で **レビュー指摘の返信とコミット** を AI に任せられるようになる
 
 ## 取り扱う自動化
 
 | #   | カテゴリ           | 自動化対象         | 使うツール                    |
 | --- | ------------------ | ------------------ | ----------------------------- |
-| 1   | Claude Skills      | コミット生成       | `/git:commit`                 |
-| 2   | Claude Skills      | コミット後レビュー | `/git:commit-review`          |
-| 3   | Claude Skills      | PR 作成            | `/pr:create`                  |
+| 1   | Claude Skills      | コミット生成       | `/git-commit`                 |
+| 2   | Claude Skills      | コミット後レビュー | `/git-commit-review`          |
+| 3   | Claude Skills      | PR 作成            | `/pr-create`                  |
 | 4   | Gemini Code Assist | PR レビュー        | Gemini Code Assist for GitHub |
-| 5   | Claude Skills      | PR レビュー対応    | `/pr:review-respond`          |
-| 6   | GitHub Actions     | リリース PR 作成   | git-pr-release                |
-| 7   | GitHub Actions     | リリースノート生成 | Release Drafter               |
+| 5   | Claude Skills      | PR レビュー対応    | `/pr-feedback`                |
 
 ## ディレクトリ構成
 
@@ -43,9 +41,7 @@ AI (Claude Code / Gemini Code Assist) を組み込んで **コーディングで
 │   │   ├── 02-commit-review.md
 │   │   ├── 03-pr-create.md
 │   │   ├── 04-gemini-review.md
-│   │   ├── 05-pr-feedback.md
-│   │   ├── 06-release-pr.md
-│   │   └── 07-release-notes.md
+│   │   └── 05-pr-feedback.md
 │   └── 99-faq.md            # トラブルシューティング
 └── examples/                # 雛形
     ├── github-actions/
@@ -59,7 +55,6 @@ AI (Claude Code / Gemini Code Assist) を組み込んで **コーディングで
 2. Section 1-3: Claude Skills 系
 3. Section 4: Gemini Code Assist
 4. Section 5: PR レビュー対応 (Claude Skills)
-5. Section 6-7: GitHub Actions 系
 
 ## 参加までにやっておくこと
 

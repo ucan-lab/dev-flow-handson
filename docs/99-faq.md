@@ -13,27 +13,6 @@
   - URL 例: `https://github.com/<user-name>/dev-flow-handson-sandbox/settings/actions`
 - Org レベルで制限されている場合は Org Admin に連絡
 
-## Section 6 / 7 (GitHub Actions)
-
-### Q. git-pr-release が PR を作ってくれない
-
-- `develop` 以外にコミットしていないか (push トリガは `develop`)
-- `main` と `develop` の両方が GitHub 上に存在するか
-- `develop` と `main` で差分があるか (差分ゼロだと "No diff" で終了)
-- `actions/checkout` で `fetch-depth: 0` を指定しているか (履歴がないと比較できない)
-- `Settings → Actions → General` の **Workflow permissions** で "Allow GitHub Actions to create and approve pull requests" が OFF だと PR 作成に失敗
-
-### Q. release-please / git-pr-release のどちらを使えば?
-
-- `develop`/`main` の二段ブランチ運用 → git-pr-release
-- `main` 一本 + Conventional Commits + CHANGELOG/タグも自動化 → release-please
-- Section 6 の比較表参照
-
-### Q. Release Drafter が動かない
-
-- PR にラベルが付いているか (`feature` / `bug` / `chore`)
-- `.github/release-drafter.yml` と workflow の両方を作ったか
-
 ## Section 1–3 (Claude Skills)
 
 ### Q. `/git-commit` がスキル一覧に出ない
