@@ -134,3 +134,4 @@ feat: expose package version constant
 - [ ] `/git-commit` が AI からメッセージ案を提示する
 - [ ] Conventional Commits プレフィックスが正しく推論されている
 - [ ] コミット後、`git log -1` で意図した内容になっている
+****

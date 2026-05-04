@@ -11,17 +11,13 @@
 
 | ツール                           | 推奨バージョン | 確認コマンド    |
 | -------------------------------- | -------------- | --------------- |
-| Git                              | 2.40+          | `git --version` |
-| GitHub CLI (`gh`)                | 2.50+          | `gh --version`  |
+| Git                              | 2.50+          | `git --version` |
+| GitHub CLI (`gh`)                | 2.90+          | `gh --version`  |
+| Claude Code                      | 2.1+           | `claude --version` |
 
-### Claude Code
-
+- GitHub CLI: https://docs.github.com/ja/github-cli/github-cli/about-github-cli
+  - GitHubの機能をターミナルで操作可能になるツール
 - Claude Code クイックスタート: https://code.claude.com/docs/ja/quickstart
-
-```bash
-claude --version
-2.1.119 (Claude Code)
-```
 
 ### `gh` 認証
 
@@ -42,10 +38,10 @@ gh auth status
 
 各設問で確認すること:
 
-- `Where do you use GitHub?`: 通常の GitHub を使う場合は `GitHub.com` を選ぶ。会社の GitHub Enterprise Server を使う場合だけ別ホストを選ぶ。
+- `Where do you use GitHub?`: 通常の GitHub を使うので `GitHub.com` を選ぶ
 - `preferred protocol`: このハンズオンでは `SSH` を選ぶ。`HTTPS` を選ぶと Git 操作時の認証方式が変わり, 後続手順の前提とズレる。
 - `Upload your SSH public key`: 表示された公開鍵を GitHub に登録する。自分の SSH 公開鍵が別パスにある場合はその鍵を選ぶ。まだ鍵がない場合は先に `ssh-keygen` で作る。
-- `Title for your SSH key`: GitHub 上で識別するための名前。迷ったら `GitHub CLI` のままでよい。
+- `Title for your SSH key`: GitHub 上で識別するための名前。`GitHub CLI` のままでよい。
 - `authenticate GitHub CLI`: `Login with a web browser` を選び, ブラウザで GitHub にログインして認可する。
 
 `gh auth status` の結果は次の状態になっていれば OK です。
@@ -72,7 +68,7 @@ github.com
 gh config set git_protocol ssh --host github.com
 ```
 
-## 3. 動作確認チェック
+## 3. 最終チェック
 
 下のコマンドがすべて成功すれば OK。
 
