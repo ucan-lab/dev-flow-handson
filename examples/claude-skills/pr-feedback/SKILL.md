@@ -199,11 +199,13 @@ gh api graphql -f query='
 2. 指摘ごとに以下を行う:
    - 該当指摘に関連するファイルだけ `git add <files>` でステージング。
    - コミットメッセージ案を作成 (Conventional Commits):
+
      ```
      fix: <指摘内容の要約>
 
      Refs: <PR URL>#discussion_r<comment_id>
      ```
+
    - **AskUserQuestion で承認**:
      - `header`: "コミット承認 [k/N]"
      - `question`: "コミットメッセージ:\n<message>\nでコミットしますか？"
@@ -212,6 +214,7 @@ gh api graphql -f query='
        - `{ label: "修正", description: "メッセージを書き直す (自然文で指示)" }`
        - `{ label: "スキップ", description: "この指摘は今回コミットしない" }`
    - 承認されたらコミット作成。
+
 3. 全コミット完了後、`git log --oneline -n <件数>` を表示し、**push 承認** を AskUserQuestion で取る:
    - `options`:
      - `{ label: "push する", description: "リモートへ push" }`
