@@ -1,4 +1,4 @@
-# Section 1: コミット自動化 (Claude Skills)
+# Section 1: 自作 Claude スキルによる、コミットメッセージの提案
 
 使うツール: `/git-commit` スキル
 

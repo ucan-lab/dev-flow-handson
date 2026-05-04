@@ -1,4 +1,4 @@
-# Section 5: PR レビュー対応自動化 (Claude Skills)
+# Section 5: 自作 Claude スキルによる、プルリクレビューコメントの対応方針提案
 
 使うツール: `/pr-feedback` スキル
 

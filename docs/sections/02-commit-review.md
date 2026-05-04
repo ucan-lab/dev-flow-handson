@@ -1,4 +1,4 @@
-# Section 2: コミット後レビュー自動化 (Claude Skills)
+# Section 2: 自作 Claude スキルによる、コミットのレビュー
 
 使うツール: `/git-commit-review` スキル
 

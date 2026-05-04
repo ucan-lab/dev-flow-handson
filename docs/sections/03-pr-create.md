@@ -1,4 +1,4 @@
-# Section 3: PR 作成自動化 (Claude Skills)
+# Section 3: 自作 Claude スキルによる、プルリク作成提案
 
 使うツール: `/pr-create` スキル
 

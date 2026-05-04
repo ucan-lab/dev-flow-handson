@@ -32,23 +32,23 @@ export default withMermaid(defineConfig({
         text: 'Claude Skills',
         collapsed: false,
         items: [
-          { text: 'Section 1: コミット自動化', link: '/sections/01-commit' },
-          { text: 'Section 2: コミット後レビュー', link: '/sections/02-commit-review' },
-          { text: 'Section 3: PR 作成', link: '/sections/03-pr-create' },
+          { text: 'Section 1: コミットメッセージ提案', link: '/sections/01-commit' },
+          { text: 'Section 2: コミットのレビュー', link: '/sections/02-commit-review' },
+          { text: 'Section 3: プルリク作成提案', link: '/sections/03-pr-create' },
         ],
       },
       {
         text: 'Gemini Code Assist',
         collapsed: false,
         items: [
-          { text: 'Section 4: PR レビュー', link: '/sections/04-gemini-review' },
+          { text: 'Section 4: プルリクレビュー', link: '/sections/04-gemini-review' },
         ],
       },
       {
         text: 'Claude Skills (レビュー対応)',
         collapsed: false,
         items: [
-          { text: 'Section 5: PR レビュー対応', link: '/sections/05-pr-feedback' },
+          { text: 'Section 5: プルリクレビューコメント対応', link: '/sections/05-pr-feedback' },
         ],
       },
       {
