@@ -9,11 +9,11 @@
 
 ### 必須
 
-| ツール                           | 推奨バージョン | 確認コマンド    |
-| -------------------------------- | -------------- | --------------- |
-| Git                              | 2.50+          | `git --version` |
-| GitHub CLI (`gh`)                | 2.90+          | `gh --version`  |
-| Claude Code                      | 2.1+           | `claude --version` |
+| ツール            | 推奨バージョン | 確認コマンド       |
+| ----------------- | -------------- | ------------------ |
+| Git               | 2.50+          | `git --version`    |
+| GitHub CLI (`gh`) | 2.90+          | `gh --version`     |
+| Claude Code       | 2.1+           | `claude --version` |
 
 - GitHub CLI: https://docs.github.com/ja/github-cli/github-cli/about-github-cli
   - GitHubの機能をターミナルで操作可能になるツール

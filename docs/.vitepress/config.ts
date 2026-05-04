@@ -33,7 +33,7 @@ export default withMermaid(defineConfig({
         collapsed: false,
         items: [
           { text: 'Section 1: コミット自動化', link: '/sections/01-commit' },
-          { text: 'Section 2: コミット整理', link: '/sections/02-commit-organizer' },
+          { text: 'Section 2: コミット後レビュー', link: '/sections/02-commit-review' },
           { text: 'Section 3: PR 作成', link: '/sections/03-pr-create' },
         ],
       },

@@ -47,10 +47,6 @@
 - スキル本文の最後に「コミットメッセージは日本語で」と追記
 - あるいは `~/.claude/CLAUDE.md` のグローバル指示を参照
 
-### Q. commit-organizer が main/master 上で走って怖い
-
-- スキル本体に「main / master では実行しない」ガードが入っている雛形を使うこと
-
 ## Section 4 (Gemini Code Assist)
 
 ### Q. PR を作っても Gemini がコメントしない
