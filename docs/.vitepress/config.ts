@@ -48,7 +48,7 @@ export default withMermaid(defineConfig({
         text: 'Claude Skills (レビュー対応)',
         collapsed: false,
         items: [
-          { text: 'Section 5: PR レビュー対応', link: '/sections/05-pr-review-respond' },
+          { text: 'Section 5: PR レビュー対応', link: '/sections/05-pr-feedback' },
         ],
       },
       {

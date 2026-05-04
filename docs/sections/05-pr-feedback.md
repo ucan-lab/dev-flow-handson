@@ -1,6 +1,6 @@
 # Section 5: PR レビュー対応自動化 (Claude Skills)
 
-使うツール: `/pr-review-respond` スキル
+使うツール: `/pr-feedback` スキル
 
 ## Why — なぜやるか
 
@@ -11,7 +11,7 @@
 ## Demo — 完成形
 
 1. PR に未解決のレビューコメントが N 件残っている状態
-2. `/pr-review-respond` を実行
+2. `/pr-feedback` を実行
 3. AI が未解決コメントを集計し、各指摘について「対応 / 議論 / 対応しない」の方針案を提示
 4. 承認後、指摘ごとに 1 コミット → push、各コメントに `@reviewer` メンション付きで返信
 
@@ -19,9 +19,9 @@
 
 ### 1. スキル登録
 
-以下の内容で `~/.claude/skills/pr-review-respond/SKILL.md` を作成 (右上のコピーボタン)。
+以下の内容で `~/.claude/skills/pr-feedback/SKILL.md` を作成 (右上のコピーボタン)。
 
-<<< ../../examples/claude-skills/pr-review-respond/SKILL.md [~/.claude/skills/pr-review-respond/SKILL.md]
+<<< ../../examples/claude-skills/pr-feedback/SKILL.md [~/.claude/skills/pr-feedback/SKILL.md]
 
 ### 2. 実行
 
@@ -31,13 +31,13 @@ Section 3 で作った PR を使う場合は、先に `/gemini review` でレビ
 PR が紐づいているフィーチャーブランチ上で:
 
 ```
-/pr-review-respond
+/pr-feedback
 ```
 
 PR 番号を明示したい場合は引数で指定:
 
 ```
-/pr-review-respond 123
+/pr-feedback 123
 ```
 
 ### 3. 提示フォーマット

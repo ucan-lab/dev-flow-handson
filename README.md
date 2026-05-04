@@ -43,7 +43,7 @@ AI (Claude Code / Gemini Code Assist) を組み込んで **コーディングで
 │   │   ├── 02-commit-review.md
 │   │   ├── 03-pr-create.md
 │   │   ├── 04-gemini-review.md
-│   │   ├── 05-pr-review-respond.md
+│   │   ├── 05-pr-feedback.md
 │   │   ├── 06-release-pr.md
 │   │   └── 07-release-notes.md
 │   └── 99-faq.md            # トラブルシューティング
