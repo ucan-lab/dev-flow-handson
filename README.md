@@ -15,19 +15,19 @@ AI (Claude Code / Gemini Code Assist) を組み込んで **コーディングで
 
 ## ゴール (当日 = お土産)
 
-1. `/git-commit` `/git-commit-review` `/pr-create` スキルを使いこなし、**PR 提出までを 1 コマンド化** できる
+1. `/git-commit` `/code-review` `/cross-review` `/pr-create` スキルを使いこなし、**PR 提出までを 1 コマンド化** できる
 2. Gemini Code Assist による **PR 自動レビュー** を有効化し、観点付きで指摘を返せるようになる
 3. `/pr-feedback` で **レビュー指摘の返信とコミット** を AI に任せられるようになる
 
 ## 取り扱う自動化
 
-| #   | カテゴリ           | 自動化対象         | 使うツール                    |
-| --- | ------------------ | ------------------ | ----------------------------- |
-| 1   | Claude Skills      | コミット生成       | `/git-commit`                 |
-| 2   | Claude Skills      | コミット後レビュー | `/git-commit-review`          |
-| 3   | Claude Skills      | PR 作成            | `/pr-create`                  |
-| 4   | Gemini Code Assist | PR レビュー        | Gemini Code Assist for GitHub |
-| 5   | Claude Skills      | PR レビュー対応    | `/pr-feedback`                |
+| #   | カテゴリ           | 自動化対象         | 使うツール                       |
+| --- | ------------------ | ------------------ | -------------------------------- |
+| 1   | Claude Skills      | コミット生成       | `/git-commit`                    |
+| 2   | Claude Skills      | コミット後レビュー | `/code-review` / `/cross-review` |
+| 3   | Claude Skills      | PR 作成            | `/pr-create`                     |
+| 4   | Gemini Code Assist | PR レビュー        | Gemini Code Assist for GitHub    |
+| 5   | Claude Skills      | PR レビュー対応    | `/pr-feedback`                   |
 
 ## ディレクトリ構成
 
