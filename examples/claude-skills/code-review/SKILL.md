@@ -5,6 +5,7 @@ description: |
   Must / Nits の 2 段階で指摘を返す。コミット直後の素早いセルフレビュー用途。
 disable-model-invocation: true
 allowed-tools: Bash(git *), Read, Grep
+argument-hint: "[base-branch]"
 ---
 
 ## 起動時コンテキスト
@@ -16,14 +17,15 @@ allowed-tools: Bash(git *), Read, Grep
 - 累積コミット (vs origin/main): !`git log origin/main..HEAD --oneline 2>/dev/null | head -20`
 - 累積差分サマリ (vs origin/main): !`git diff origin/main...HEAD --stat 2>/dev/null | tail -20`
 
+ベースブランチは引数 `$ARGUMENTS` の有無で分岐するため、起動時コンテキストは `origin/main` 仮定の参考値として扱う。
+
 ## 事前チェック
 
 1. `git branch --show-current` で現在ブランチを取得。`main` / `master` / `develop` 上ならレビュー対象がないので中止し、トピックブランチへ切り替えるよう案内。
-2. ベースブランチを推定:
-   - 既定は `origin/main`。
-   - 上の起動時コンテキストで `n/a` なら、`master` / `develop` / ローカル `main` を順に試して最初に見つかったものを採用。
-   - どれも当たらなければユーザーにベースブランチを質問。
-3. 推定したベースブランチをユーザーに 1 行で提示し、明示的に承認を取る。例: `ベースは origin/main で進めます。よいですか？`
+2. ベースブランチを決定:
+   - 引数 `$ARGUMENTS` が指定されていればそれを採用 (例: `/code-review develop` → `develop`、`/code-review origin/release/x` → `origin/release/x`)。`git rev-parse --verify <base>` で存在確認し、見つからなければユーザーに正しいブランチ名を聞き直す。
+   - 引数が無ければ既定 `origin/main`。起動時コンテキストで `n/a` なら `master` / `develop` / ローカル `main` を順に試して最初に見つかったものを採用。どれも当たらなければユーザーにベースブランチを質問。
+3. 採用するベースブランチをユーザーに 1 行で提示し、明示的に承認を取る。例: `ベースは origin/main で進めます。よいですか？` (引数で指定された場合は `指定どおり <base> で進めます。` と短く確認する)
 4. 累積差分が 0 行なら `レビュー対象の差分がありません。` と返して終了。
 5. 累積差分が **1000 行を超える** ときは、観点を絞るか / コミット単位でレビューするか / そのまま続行するかを選んでもらう。
 

@@ -6,6 +6,7 @@ description: |
   単一 AI レビューの視点偏りをクロスバリデーションで補正するためのスキル。
 disable-model-invocation: true
 allowed-tools: Bash(git *), Read, Grep, Glob, Agent
+argument-hint: "[base-branch]"
 ---
 
 ## 起動時コンテキスト
@@ -16,11 +17,15 @@ allowed-tools: Bash(git *), Read, Grep, Glob, Agent
 - 累積コミット (vs origin/main): !`git log origin/main..HEAD --oneline 2>/dev/null | head -30`
 - 累積差分サマリ (vs origin/main): !`git diff origin/main...HEAD --stat 2>/dev/null | tail -30`
 
+ベースブランチは引数 `$ARGUMENTS` の有無で分岐するため、起動時コンテキストは `origin/main` 仮定の参考値として扱う。
+
 ## 事前チェック
 
 1. `git branch --show-current` で現在ブランチを取得。`main` / `master` / `develop` 上なら中止。
-2. ベースブランチを推定 (既定 `origin/main`、無ければ `master` / `develop` / ローカル `main` を順に試す)。
-3. 推定ベースをユーザーに提示し承認を取る。
+2. ベースブランチを決定:
+   - 引数 `$ARGUMENTS` が指定されていればそれを採用 (例: `/cross-review develop`)。`git rev-parse --verify <base>` で存在確認し、見つからなければユーザーに聞き直す。
+   - 引数が無ければ既定 `origin/main`。無ければ `master` / `develop` / ローカル `main` を順に試す。
+3. 採用するベースをユーザーに提示し承認を取る (引数で指定された場合は `指定どおり <base> で進めます。` と短く確認)。
 4. 累積差分が 0 行なら終了。
 5. 累積差分が **2000 行超** のときは、観点を絞るか / コミット単位レビューに切り替えるか / そのまま続行するかを確認。
 
