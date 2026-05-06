@@ -38,7 +38,7 @@ AI (Claude Code / Gemini Code Assist) を組み込んで **コーディングで
 │   ├── 00-prerequisites.md  # 事前準備
 │   ├── sections/
 │   │   ├── 01-commit.md
-│   │   ├── 02-commit-review.md
+│   │   ├── 02-review.md
 │   │   ├── 03-pr-create.md
 │   │   ├── 04-gemini-review.md
 │   │   └── 05-pr-feedback.md
