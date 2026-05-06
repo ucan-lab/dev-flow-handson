@@ -2,11 +2,11 @@
 name: pr-feedback
 description: |
   現在のブランチに紐づく PR のレビューコメントを取得し、各指摘の妥当性を判断。
-  方針一覧をユーザーへ提示・AskUserQuestion で承認を得た後、修正は general-purpose
-  サブエージェントへ委譲してメインのコンテキストを節約。コミット & push、
+  方針一覧をユーザーへ提示・`AskUserQuestion` で承認を得た後、修正は `general-purpose`
+  サブエージェントへ委譲してメインのコンテキストを節約。コミット / push、
   返信文面 (リクエスタへメンション付き) も都度ユーザー承認を経て実行する。
 disable-model-invocation: true
-allowed-tools: Bash(gh *) Bash(git *) Agent AskUserQuestion
+allowed-tools: Bash(gh *), Bash(git *), Agent, AskUserQuestion
 argument-hint: "[pr-number]"
 ---
 
@@ -25,7 +25,7 @@ PR メタ情報はスキル本文ロジック側で取得する (引数 `$ARGUME
 
 このスキルは PR レビューの **複数ラウンド** で繰り返し呼ばれる前提。毎回ゼロから状況を確認する。
 
-1. `git branch --show-current` で現在のブランチ取得。`main` / `master` / `release/*` なら中止。
+1. `git branch --show-current` で現在ブランチを取得。`main` / `master` / `release/*` なら中止。
 2. `gh auth status` で認証確認。
 3. PR 特定:
    - 引数 `$ARGUMENTS` に PR 番号が指定されていれば `gh pr view <番号> --json number,url,headRefName,baseRefName,author,isDraft`
@@ -63,8 +63,8 @@ gh api graphql -f query='
 gh pr checks <number>
 ```
 
-- 全て `pass` (または `pending` のみ) → 修正不要
-- `fail` あり → 失敗ジョブのログを `gh run view <run-id> --log-failed` で取得し、**コード修正が必要な失敗か / インフラ起因か** を判定。コード修正が必要なら「CI 修正」を Phase 1 の指摘リストに **追加項目 [CI]** として混ぜる。
+- 全て `pass` (または `pending` のみ): 修正不要
+- `fail` あり: 失敗ジョブのログを `gh run view <run-id> --log-failed` で取得し、**コード修正が必要な失敗か / インフラ起因か** を判定。コード修正が必要なら「CI 修正」をステップ 1 の指摘リストに **追加項目 [CI]** として混ぜる。
 
 ### 既に解決済みのスレッドを resolve 提案
 
@@ -74,10 +74,10 @@ gh pr checks <number>
 - スレッド内の最新コメントが「LGTM」「直りましたね」など解決を示唆する文脈
 - 指摘がコメントタイポ等の軽微なものでコード側で既に消えている
 
-該当ありの場合、AskUserQuestion で resolve するか確認:
+該当ありの場合、`AskUserQuestion` で resolve するか確認:
 
 - `header`: "解決済みスレッドの resolve"
-- `question`: "以下 K 件は既に対応済みと判断しました。GitHub 側で resolve しますか？\n[1] @<reviewer> path:line — <要約>\n..."
+- `question`: "以下 K 件は既に対応済みと判断しました。GitHub 側で resolve しますか？\n[1] @<reviewer> path:line - <要約>\n..."
 - `options`:
   - `{ label: "全部 resolve", description: "提示した K 件すべてを resolve" }`
   - `{ label: "一部のみ", description: "番号で指定する" }`
@@ -135,18 +135,18 @@ gh api graphql -f query='
   }' -f owner=<owner> -f repo=<repo> -F number=<number>
 ```
 
-## 妥当性判断と方針提示 (Phase 1)
+## ステップ 1: 妥当性判断と方針提示
 
 各指摘について、Claude が次のいずれかを判定:
 
 - **対応する**: 指摘が妥当でコード修正が必要
-- **議論したい**: 妥当性に疑問あり / 設計判断を要する → 返信のみ (コミットなし)
-- **対応しない**: 既に対応済み / スコープ外 / 誤解 → 理由を返信のみ
+- **議論したい**: 妥当性に疑問あり / 設計判断を要する。返信のみ (コミットなし)。
+- **対応しない**: 既に対応済み / スコープ外 / 誤解。理由を返信のみ。
 
 ### サマリ提示フォーマット
 
-```
-■ 未解決レビューコメント N 件
+```text
+## 未解決レビューコメント N 件
 
 [1] @<reviewer> path/to/file.ts:42
     指摘: <要約>
@@ -161,7 +161,7 @@ gh api graphql -f query='
 ...
 ```
 
-### AskUserQuestion による承認
+### `AskUserQuestion` による承認
 
 サマリ提示の **直後** に `AskUserQuestion` を 1 回だけ呼び、次のいずれかを選択させる:
 
@@ -173,9 +173,9 @@ gh api graphql -f query='
   - `{ label: "個別調整", description: "一部の指摘について判断を変えたい" }`
   - `{ label: "中止", description: "今回はこのまま実行しない" }`
 
-「個別調整」が選ばれた場合は、ユーザーに変更したい指摘番号と新しい判断を自然文で答えてもらい、サマリを更新して再度同じ AskUserQuestion をかける。「一括承認」が出るまでループする。
+「個別調整」が選ばれた場合は、ユーザーに変更したい指摘番号と新しい判断を自然文で答えてもらい、サマリを更新して再度同じ `AskUserQuestion` をかける。「一括承認」が出るまでループする。
 
-## 修正の委譲とコミット (Phase 2)
+## ステップ 2: 修正の委譲とコミット
 
 ### サブエージェントへの委譲
 
@@ -206,7 +206,7 @@ gh api graphql -f query='
      Refs: <PR URL>#discussion_r<comment_id>
      ```
 
-   - **AskUserQuestion で承認**:
+   - **`AskUserQuestion` で承認**:
      - `header`: "コミット承認 [k/N]"
      - `question`: "コミットメッセージ:\n<message>\nでコミットしますか？"
      - `options`:
@@ -215,14 +215,14 @@ gh api graphql -f query='
        - `{ label: "スキップ", description: "この指摘は今回コミットしない" }`
    - 承認されたらコミット作成。
 
-3. 全コミット完了後、`git log --oneline -n <件数>` を表示し、**push 承認** を AskUserQuestion で取る:
+3. 全コミット完了後、`git log --oneline -n <件数>` を表示し、**push 承認** を `AskUserQuestion` で取る:
    - `options`:
      - `{ label: "push する", description: "リモートへ push" }`
      - `{ label: "保留", description: "後で手動で push する" }`
 
 `--amend` / `--force` / `--force-with-lease` は使わない。
 
-## 返信 (Phase 3)
+## ステップ 3: 返信
 
 「対応する」「議論したい」「対応しない」すべての指摘に対して返信文面を作成。
 
@@ -236,8 +236,8 @@ gh api graphql -f query='
 
 全件の返信文面案を 1 つのリストとして提示:
 
-```
-■ 返信文面案 N 件
+```text
+## 返信文面案 N 件
 
 [1] @<reviewer> path/to/file.ts:42 (commit <sha>)
     > <返信本文>

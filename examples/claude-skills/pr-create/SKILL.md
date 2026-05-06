@@ -4,7 +4,7 @@ description: |
   現在のブランチの変更内容を読み、PR タイトル / Summary / Test plan を生成し、
   ユーザー承認後に `gh pr create` で PR を作成する。
 disable-model-invocation: true
-allowed-tools: Bash(gh *) Bash(git *)
+allowed-tools: Bash(gh *), Bash(git *)
 argument-hint: "[--draft]"
 ---
 
@@ -19,7 +19,7 @@ argument-hint: "[--draft]"
 
 ## 事前チェック
 
-1. `git branch --show-current` で現在のブランチ取得。`main` / `master` / `release/*` なら中止。
+1. `git branch --show-current` で現在ブランチを取得。`main` / `master` / `release/*` なら中止。
 2. `gh auth status` で認証確認。
 3. リモート追跡ブランチが無ければ `git push -u origin <branch>` を提案 (ユーザー承認必須)。
 4. ベースブランチの推定は `gh repo view --json defaultBranchRef -q .defaultBranchRef.name` を優先し、
@@ -28,7 +28,7 @@ argument-hint: "[--draft]"
 ## 本文生成
 
 1. `git log <base>..HEAD` でブランチ差分コミットを全取得。
-2. `git diff <base>...HEAD` で差分を読む (長大なら `--stat` → 重要ファイルだけ `diff`)。
+2. `git diff <base>...HEAD` で差分を読む (長大なら `--stat` から重要ファイルだけ `diff`)。
 3. 次のテンプレートで出力:
 
 ```markdown
@@ -53,7 +53,7 @@ argument-hint: "[--draft]"
 ## 実行
 
 - タイトルは 70 文字以内、プレフィックスは最新コミット or Conventional Commits を継承。
-- 本文は必ず HEREDOC で渡す:
+- 本文は必ず here-doc で渡す:
 
 ```bash
 gh pr create --title "..." --body "$(cat <<'EOF'
@@ -68,4 +68,4 @@ EOF
 
 - ユーザー承認なしの PR 作成
 - main / master / release/\* ブランチからの PR 作成
-- PR body に `.env` や秘密情報を含めない
+- PR body に `.env` や秘密情報を含めない。
