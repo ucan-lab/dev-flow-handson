@@ -2,7 +2,7 @@
 name: code-review
 description: |
   現在のフィーチャーブランチの累積差分 (base..HEAD) を 1 パスで軽量レビューし、
-  Must / Nits の 2 段階で指摘を返す。コミット直後の素早いセルフレビュー用途。
+  要修正 / 任意修正 の 2 段階で指摘を返す。コミット直後の素早いセルフレビュー用途。
 disable-model-invocation: true
 allowed-tools: Bash(git *), Read, Grep
 argument-hint: "[base-branch]"
@@ -23,7 +23,7 @@ argument-hint: "[base-branch]"
 
 1. `git branch --show-current` で現在ブランチを取得。`main` / `master` / `develop` 上ならレビュー対象がないので中止し、トピックブランチへ切り替えるよう案内。
 2. ベースブランチを決定:
-   - 引数 `$ARGUMENTS` が指定されていればそれを採用 (例: `/code-review develop` → `develop`、`/code-review origin/release/x` → `origin/release/x`)。`git rev-parse --verify <base>` で存在確認し、見つからなければユーザーに正しいブランチ名を聞き直す。
+   - 引数 `$ARGUMENTS` が指定されていればそれを採用 (例: `/code-review develop` なら `develop`、`/code-review origin/release/x` なら `origin/release/x`)。`git rev-parse --verify <base>` で存在確認し、見つからなければユーザーに正しいブランチ名を聞き直す。
    - 引数が無ければ既定 `origin/main`。起動時コンテキストで `n/a` なら `master` / `develop` / ローカル `main` を順に試して最初に見つかったものを採用。どれも当たらなければユーザーにベースブランチを質問。
 3. 採用するベースブランチをユーザーに 1 行で提示し、明示的に承認を取る。例: `ベースは origin/main で進めます。よいですか？` (引数で指定された場合は `指定どおり <base> で進めます。` と短く確認する)
 4. 累積差分が 0 行なら `レビュー対象の差分がありません。` と返して終了。
@@ -44,25 +44,28 @@ argument-hint: "[base-branch]"
 
 ## 出力フォーマット
 
-レビュー結果は以下の Markdown で返す。指摘がない区分は見出しごと省略してよい。
+レビュー結果は以下の Markdown で返す。指摘がない区分は見出しごと省略してよい。見出しはすべて日本語で出すこと (英語ラベル `Must` / `Nits` / `Should` を使わない)。
 
-```
+```markdown
 ## サマリ
+
 - ベース: <base>
 - 範囲: <commits> コミット / <files> ファイル / +<add>/-<del> 行
 - 所感: <1-2 文>
 
-## Must (要修正)
-- <path>:<line> — <指摘内容>
+## 要修正
 
-## Nits (任意)
-- <path>:<line> — <指摘内容>
+- <path>:<line> - <指摘内容>
+
+## 任意修正
+
+- <path>:<line> - <指摘内容>
 ```
 
 判定の目安:
 
-- **Must**: そのまま push したら明らかに事故るもの (シークレット、デバッグコード、構文破綻、コミットに入れるべきでない無関係差分)
-- **Nits**: 動作には影響しないが整えた方がよいもの (typo、コメントアウト残骸、軽微なスタイル)
+- **要修正**: そのまま push したら明らかに事故るもの (シークレット、デバッグコード、構文破綻、コミットに入れるべきでない無関係差分)
+- **任意修正**: 動作には影響しないが整えた方がよいもの (typo、コメントアウト残骸、軽微なスタイル)
 
 ## 禁止事項
 
@@ -73,6 +76,6 @@ argument-hint: "[base-branch]"
 
 ## 最後に伝えること
 
-- 指摘 0 件なら `Must / Nits ともに指摘なし。` と明示する。
-- Must がある場合は「修正後にもう一度 `/code-review` を実行することを推奨します」と案内する。
+- 指摘 0 件なら `要修正 / 任意修正 ともに指摘なし。` と明示する。
+- 要修正がある場合は「修正後にもう一度 `/code-review` を実行することを推奨します」と案内する。
 - 観点を変えたい / より厳しく見たい場合は `/cross-review` (辛口/甘口クロスバリデーション版) を案内する。
